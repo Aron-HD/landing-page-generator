@@ -6,7 +6,7 @@ Automated creation of formulaic HTML static pages for Judging panels across all 
 
 Takes input from csv, panel chair must be at top.
 
-Outputs two html files - one for the judging panel grid with headshots, another for the judging bios.
+Outputs two html files - one for the judging panel grid with headshots, another for the judging bios. (These are hidden for confidentiality).
 
 **Examples:**
 - [Grid](https://www.warc.com/WarcAwards.prize?tab=innovation)
