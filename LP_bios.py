@@ -25,7 +25,7 @@ html_output += '\n<!-- The Panel -->\n<h4 id="panel">The Panel</h4>\n'
 with open(judges_details, 'r') as data_file:
 	csv_data = csv.DictReader(data_file)	
 	
-	# skip chair
+	# skip chair of the panel (always in first line)
 	next(csv_data) 
 
 	for line in csv_data:
