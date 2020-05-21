@@ -62,7 +62,7 @@ elif award == 'media':
 	category = input("\t- type 'channel-integration', 'data', 'tech' or 'partnerships-sponsorships': ") 
 
 	prize = 'MediaAwards'
-	category_href = f'/WARCAwards/{category}-judges'
+	category_href = f'/MediaAwards/{category}-judges'
 	full_award = 'WARC Media Awards'
 	awards_or_prize = 'Awards'
 	cartridge = 5758
