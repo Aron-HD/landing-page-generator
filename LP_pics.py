@@ -44,7 +44,7 @@ def main():
 		chair_name = Chair.replace(' ', '-').lower()
 		# chair_name = chair_name.lower()
 		chair_title = Chair + ' &ndash; ' + (csv_data[1][2]) + ', ' + (csv_data[1][3])
-		html_output += f'\n<a class="judge-image proportional-box ratio-1-1 {chair_name} chair" href="{category_href}.info#{chair_name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{chair_title}</span></a>'
+		html_output += f'\n<a class="judge-image proportional-box ratio-1-1 {chair_name} chair" href="{category_href}#{chair_name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{chair_title}</span></a>'
 
 	with open(judges_details, 'r') as data_file:
 		csv_data = csv.DictReader(data_file)	
@@ -60,9 +60,9 @@ def main():
 
 			# comment out judges who don't yet have a bio / pic
 			if len(bio) < 10:
-				html_output += f'\n<!-- <a class="judge-image proportional-box ratio-1-1 {name}" href="{category_href}.info#{name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{title}</span></a> -->'
+				html_output += f'\n<!-- <a class="judge-image proportional-box ratio-1-1 {name}" href="{category_href}#{name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{title}</span></a> -->'
 			else:
-				html_output += f'\n<a class="judge-image proportional-box ratio-1-1 {name}" href="{category_href}.info#{name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{title}</span></a>'
+				html_output += f'\n<a class="judge-image proportional-box ratio-1-1 {name}" href="{category_href}#{name}" onclick="TrackEvent(&#39;Warc_Awards&#39;, &#39;Judging_panel&#39;, &#39;Judge&#39;); return true;"><span class="proportional-box-content">{title}</span></a>'
 
 	html_output += "\n</div>\n</div>\n</div>\n</section>"
 
