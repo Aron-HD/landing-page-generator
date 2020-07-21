@@ -6,7 +6,7 @@ print('\n- Creating landing page for bios..\n')
 
 # html starts here
 
-html_output += f'<section class="ScrollSpyPageHeader">\n<div class="image-header image-header-awards">\n<div class="container">\n<h1 class="SpyMenuItem">{full_award} &ndash; {year} {fc}Judges</h1>\n<p><a href="/{prize}.prize" class="box-links blue">Back to the {awards_or_prize} page</a></p>\n</div>\n</div>\n</section>\n\n<!-- Chair of Judges -->\n<h4 id="chair">Chair of Judges</h4>\n<div class="judge group">'
+html_output += f'<section>\n<div class="image-header image-header-awards">\n<div class="container">\n<h1 class="SpyMenuItem">{full_award} &ndash; {year} {fc}Judges</h1>\n<p><a href="/{prize}.prize" class="box-links blue">Back to the {awards_or_prize} page</a></p>\n</div>\n</div>\n</section>\n\n<!-- Chair of Judges -->\n<section class="container">\n<h4 id="chair">Chair of Judges</h4>\n<div class="judge group">'
 
 with open(judges_details, 'r') as data_file:
 	csv_data = list(csv.reader(data_file))
@@ -41,7 +41,7 @@ with open(judges_details, 'r') as data_file:
 		else:
 			html_output += f'\n<div class="judge group">\n<h4 id="{name}"><img src="/Images/WARCSiteContent/landing-pages/awards/{award}/judges/{name}.jpg" alt="{Name}">{title}</h4>\n<p>{bio}</p>\n</div>\n'
 
-html_output += f'\n<!-- Navigation -->\n<section class="navigate-between-pages">\n<div class="container">\n<div class="page-backwards">\n<a href="/{prize}.prize"><img src="/images-site/arrow.svg" alt="<" class="arrow" height="16" width="19"> Back to the {awards_or_prize} page</a>' 
+html_output += f'</section>\n\n<!-- Navigation -->\n<section class="navigate-between-pages">\n<div class="container">\n<div class="page-backwards">\n<a href="/{prize}"><img src="/images-site/arrow.svg" alt="<" class="arrow" height="16" width="19"> Back to the {awards_or_prize} page</a>' 
 
 html_output += '\n</div>\n</div>\n</section>'
 
