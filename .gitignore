@@ -1,3 +1,5 @@
+/templates/__pycache__
+/templates/*.py
 /__pycache__
 /_archive
 *.csv
