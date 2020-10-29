@@ -4,4 +4,4 @@
 /_archive
 *.csv
 *.html
-test.py
+*.tpl

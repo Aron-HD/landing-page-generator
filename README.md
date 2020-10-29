@@ -32,6 +32,8 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 data['report_link'] - *the full article link (e.g. "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"), which needs taking as input and updating to dictionary that is fed into render.*
 
+data['report'] - *the full report name (e.g. 'Asian Strategy Report'*
+
 ~~data['page']~~ - *the type of page being made, "about", "entry_details", "previous" - Not 100% sure this TrackEvent changes though*
 
 data['award'] - *might need category for category reports in global awards*
@@ -39,6 +41,8 @@ data['award'] - *might need category for category reports in global awards*
 data['year'] - *current year*
 
 data['entry_kit'] - *just the file name of the pdf (maybe strip '.pdf' so it doesn't matter if ext is in name)*
+
+data['full_award'] - *for item title and description*
 
 
 - about
