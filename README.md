@@ -30,7 +30,8 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 - insights and inspirations (others extend from this)
 - about
-- 
+- entry details
+- previous
 
 ##### Panels
 
@@ -39,7 +40,11 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 ##### Winners
 
-- 
+These will be taken out of the landing page tabs when not relevant to keep judges separate.
+
+- winners
+- shortist
+
 
 ### Landing page codes
 
