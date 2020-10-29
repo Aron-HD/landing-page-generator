@@ -1,5 +1,5 @@
-/templates/__pycache__
-/templates/*.py
+/dev/__pycache__
+/dev/*.py
 /__pycache__
 /_archive
 *.csv
