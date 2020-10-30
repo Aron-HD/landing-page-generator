@@ -30,23 +30,45 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 - insights and inspirations (others extend from this)
 
-data['report_link'] - *the full article link (e.g. "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"), which needs taking as input and updating to dictionary that is fed into render.*
+d.report_link - *the full article link (e.g. "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"), which needs taking as input and updating to dictionary that is fed into render.*
 
-data['report'] - *the full report name (e.g. 'Asian Strategy Report'*
+d.report - *the full report name (e.g. 'Asian Strategy Report'*
 
-~~data['page']~~ - *the type of page being made, "about", "entry_details", "previous" - Not 100% sure this TrackEvent changes though*
+d.page - *the type of page being made, "about", "entry_details", "previous" - Not 100% sure this TrackEvent changes though*
 
-data['award'] - *might need category for category reports in global awards*
+d.award - *might need category for category reports in global awards*
 
-data['year'] - *current year*
+d.year - *current year*
 
-data['entry_kit'] - *just the file name of the pdf (maybe strip '.pdf' so it doesn't matter if ext is in name)*
+d.entry_kit - *just the file name of the pdf (maybe strip '.pdf' so it doesn't matter if ext is in name)*
 
-data['full_award'] - *for item title and description*
+d.full_award - *for item title and description*
 
+
+- entry details
+
+### Links
+
+- **Reports**
+    - "social": "/content/article/2020-social-strategy-report-insights-from-the-warc-awards/133117",
+    - "content": "/content/article/2020-content-strategy-report-insights-from-the-warc-awards/133641"
+    - "mena": "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904",
+    - "asia": "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"
+    - "media": "/content/article/2020-media-strategy-report-insights-from-the-warc-media-awards/132328",
+    - "innovation": ?
+    - "purpose": ?
+- **Entry kits**
+    - warc-awards-entrykit2020.pdf
+    - MENAPrize2020-entrykit_v2.pdf
+    - AsiaPrize-entrykit2020_v03.pdf
+    - mediaawards-entrykit2020.pdf
+- **Entry forms**
+    - warc-awards-entryform2020.docx
+    - MENAPrize2020-entryform_v2.docx
+    - AsiaPrize-entryform2020.docx
+    - mediaawards-entryform2020.docx
 
 - about
-- entry details
 - previous
 
 ##### Panels
