@@ -26,6 +26,8 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 ### Templates
 
+Holding off on making full templates as website redesign will change everything soon.
+
 ##### Launch
 
 - insights and inspirations (others extend from this)
@@ -69,6 +71,15 @@ d.full_award - *for item title and description*
     - mediaawards-entryform2020.docx
 
 - about
+
+Seperate extended templates for about will probably be needed.
+
+Use num2words module to count award year from start date and convert to word.
+
+2020 was:
+fifth year of Media
+tenth year of Asia
+
 - previous
 
 ##### Panels
