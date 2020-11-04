@@ -49,7 +49,7 @@ d.full_award - *for item title and description*
 
 - entry details
 
-### Links
+**Links:**
 
 - **Reports**
     - "social": "/content/article/2020-social-strategy-report-insights-from-the-warc-awards/133117",
