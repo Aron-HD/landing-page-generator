@@ -5,3 +5,5 @@
 *.csv
 *.html
 *.tpl
+*.sublime-project
+*.sublime-workspace
