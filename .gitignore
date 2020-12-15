@@ -1,7 +1,6 @@
-/dev/__pycache__
-/dev/*.py
+/dev
 /__pycache__
-/_archive
+# /_archive
 *.csv
 *.html
 *.tpl
