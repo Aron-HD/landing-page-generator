@@ -23,10 +23,21 @@ Recently added functionality to comment out judges who have not yet submitted th
 
 Updating this to use Jinja2 module for templating rather than concatenating strings.
 
+### ToDo
+
+- rewrite README
+- write tests
+- add License
+- add dependencies / requirements
+- add GUI to core.py 
+- refactor core.py as Class
+- finish templates
+- format file when writing json
+- fix unecessary and duplicate dictionary / json entries
+- create docs in docs folder and add docstrings
+- add database instead of csv
 
 ### Templates
-
-Holding off on making full templates as website redesign will change everything soon.
 
 ##### Launch
 
