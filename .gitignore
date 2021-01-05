@@ -1,8 +1,8 @@
 /dev
 /__pycache__
 # /_archive
-*.csv
 *.html
+*.csv
 *.tpl
 *.sublime-project
 *.sublime-workspace
