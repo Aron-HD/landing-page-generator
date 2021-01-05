@@ -1,0 +1,44 @@
+{% extends "preview.tpl" %}
+{% block content %}
+<!-- SHORTLIST PAGE -->
+<div id="winners">
+	<section class="section-std bg-background1" id="shortlist">
+		<div class="container-fluid">
+			<!-- <h3>{{ page.title().replace('_',' ') }}</h3> -->
+			<h3>Shortlist</h3>
+		</div>
+		<div class="container-fluid margin-t-medium">
+			<section class="tiles-triptych tiles-spaced">
+				{% for i in d.papers %}
+				<a class="tile tile-light" href="{{ i.Link }}">
+					<h6>{{ i.Title }}</h6>
+					<div class="credits">
+						<div>
+							<span class="credits-category">Brand</span><br>
+							{{ i.Brand }}
+						</div>
+						<div>
+							<span class="credits-category">Agency</span><br>
+							{{ i.Lead }}
+						</div>
+						<div>
+							<span class="credits-category">Advertiser</span><br>
+							{{ i.Parent }}
+						</div>
+						<div>
+							<span class="credits-category">Market</span><br>
+							{{ i.Market }}
+						</div>
+					</div>
+				</a>
+				{% endfor %}	
+			</section>
+			<div class="row margin-t-medium">
+				<div class="col-sm-6 col-lg-3 mx-auto containing-box-links text-center">
+					<a class="box-links box-links-wide" href="/Search/Award/5758/A134206,A134242,A134258,A134281,A134300,A134302,A134309,A134314,A134317,A134327,A134334,A134355,A134357,A134360,A134361,A134363,A134381,A134388,A134393,A134399,A134406">Browse shortlist</a>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}
