@@ -28,9 +28,11 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 - rewrite README
 - write tests
 - add License
+- add logging
+- move data function to class in separate package with helpers and dict
+- refactor core.py as Class
 - add dependencies / requirements
 - add GUI to core.py 
-- refactor core.py as Class
 - finish templates
 - format file when writing json
 - fix unecessary and duplicate dictionary / json entries
