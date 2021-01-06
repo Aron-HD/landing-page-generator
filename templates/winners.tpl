@@ -21,9 +21,9 @@
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
-					{% if '+' in i.Award %}
+					{% if '+' in i.Award %}{% if [x for x in d.special_awards.keys()] in i.Award %}
 					<div class="margin-v-medium">
-						<span class="special-details">XXX Special Award</span>
+						<span class="special-details">{{ x }} Special Award</span>
 					</div>
 					{% endif %}
 					<div class="credits">
@@ -63,9 +63,9 @@
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
-					{% if '+' in i.Award %}
+					{% if '+' in i.Award %}{% if [x for x in d.special_awards.keys()] in i.Award %}
 					<div class="margin-v-medium">
-						<span class="special-details">XXX Special Award</span>
+						<span class="special-details">{{ x }} Special Award</span>
 					</div>
 					{% endif %}
 					<div class="credits">
@@ -119,11 +119,11 @@
 								{{ i.Market }}
 							</div>
 						</div>
-						{% if '+' in i.Award %}
+						{% if '+' in i.Award %}{% if [x for x in d.special_awards.keys()] in i.Award %}
 						<div class="margin-v-medium">
-							<span class="special-details">XXX Special Award</span>
+							<span class="special-details">{{ x }} Special Award</span>
 						</div>
-						{% endif %}
+						{% endif %}{% endif %}
 					</a>
 				{% endif %}{% endfor %}
 			</section>
@@ -156,9 +156,9 @@
 								{{ i.Market }}
 							</div>
 						</div>
-						{% if '+' in i.Award %}
+						{% if '+' in i.Award %}{% if [x for x in d.special_awards.keys()] in i.Award %}
 						<div class="margin-v-medium">
-							<span class="special-details">XXX Special Award</span>
+							<span class="special-details">{{ x }} Special Award</span>
 						</div>
 						{% endif %}
 					</a>
