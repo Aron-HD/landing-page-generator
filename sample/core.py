@@ -98,7 +98,7 @@ def main():
 		# do all this string processing elsewhere 
 		fn = func.save_name(pg, awd, cat, yr, elmt) #<<<-----------------
 
-		output = env.get_template(f'{pg}.tpl').render(d=d, page=pg)#tpl.render
+		output = env.get_template(f'{pg}.html').render(d=d, page=pg)#tpl.render
 		write_html(fn, output)
 		print("wrote:", fn)
 	except Exception as e:
@@ -106,7 +106,7 @@ def main():
 
 def main1():
 	
-	for f in glob(r"../templates/*.tpl"):
+	for f in glob(r"../templates/*.html"):
 		print(f)
 		for line in f:
 			tag = line.find(r'{{')
