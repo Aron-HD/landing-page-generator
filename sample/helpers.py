@@ -11,17 +11,18 @@ class Functions:
 	def awd_elmt(award, category, page):
 		'''To get launch page codes or cartridge code.'''
 		try:
-			if page == any(key for key in AWARDS[award]['categories'].keys()):  # or 'preview' in page // for alt preview pages?
-				code = AWARDS[award]['categories'][category][page]
+			category = AWARDS[award]['categories'][category]
+			if page in [k for k in category.keys()]:
+				code = category[page]
 				return code
-			elif page == any(key for key in AWARDS[award].keys()):
+			else:
 				code = AWARDS[award][page]
 				return code
 		except KeyError:
 			print('page not found in awards dictionary keys')
 
 	def process_date(date):
-		'''To get launch page codes or cartridge code.'''
+		'''To process input date and current year.'''
 		raw_date = dtm.strptime(date, '%d/%m/%Y')
 		full_date = raw_date.strftime('%d %B %Y')
 		d = raw_date.strftime('%d %B')
@@ -29,44 +30,44 @@ class Functions:
 		return full_date, d, year
 
 	def get_chair(category):
-		'''To get launch page codes or cartridge code.'''
+		'''To get chair specifically from judges csv input.'''
 		df = pd.read_csv(f'../data/csv/{category}-judges.csv', encoding="utf-8") # change .. when moved
 		chair = (df.iloc[0][0]) + ' ' + (df.iloc[0][1]) + ', ' + (df.iloc[0][2]) + ', ' + (df.iloc[0][3])
+
 		return chair
 
-	def mknewdir(year):
-		'''To get launch page codes or cartridge code.'''
-		newdir = f'../static/html/{year}'
+	def mknewdir(newdir):
+		'''Creates relevant directory.'''
 		if not Path(newdir).is_dir():
 			print('made new directory:', newdir)
 			Path(newdir).mkdir(parents=True)
 		return newdir
 
 	def save_name(page, awd, cat, year, code):
-		'''To get launch page codes or cartridge code.'''
+		'''Returns correct save name and directory.'''
 		if awd == 'warc':
 			award = AWARDS[awd]['full_award'] # WARC Awards
 		elif awd == 'mena':
 			award = AWARDS[awd]['award'].upper() # MENA
 		else:
 			award = AWARDS[awd]['award'].title() # Asia, Media
-
+		newdir = f'../static/html/{year}'
 		if cat == 'mena' or cat == 'asia':
-			save_name = f'{Functions.mknewdir(year)}/{award} {page} ({code}).html'
+			save_name = f'{Functions.mknewdir(newdir)}/{award} {page} ({code}).html'
 		else:
-			save_name = f'{Functions.mknewdir(year)}/{cat} {page} ({code}).html'
+			save_name = f'{Functions.mknewdir(newdir)}/{cat} {page} ({code}).html'
 
-		return save_name.replace("_"," ").replace("judges","")    
+		return save_name.replace("_"," ")    
 
 	def judge_count(category):
-		'''To get launch page codes or cartridge code.'''
-		df = pd.read_csv(f'../csv/{category}-judges.csv', encoding="utf-8") # change .. when moved
+		'''Counts the number of judges.'''
+		df = pd.read_csv(f'../data/csv/{category}-judges.csv', encoding="utf-8") # change .. when moved
 		count = df['Name'].size
 		return count
 
 	def entry_count(file):
-		'''To get launch page codes or cartridge code.'''
-		df = pd.read_csv(f'../csv/{file}.csv', encoding="utf-8") # change .. when moved
+		'''Counts the number of entries.'''
+		df = pd.read_csv(f'../data/csv/{file}.csv', encoding="utf-8") # change .. when moved
 		count = df.columns[0]
 		return df[count].size
 
