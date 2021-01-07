@@ -265,10 +265,10 @@ AWARDS = {
         'prize': 'effectiveness',
         'awards_or_prize': 'Awards',
         'cartridge': 0,
-        'hero': 0,
-        'about': 0,
+        'hero': 6737,
+        'about': 6738,
         'previous': 'category',
-        'entry_details': 0,
+        'entry_details': 6740,
         'categories': {
             'experience': {
                 'award':
@@ -290,19 +290,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/customer-experience-judges',
                 'hero':
-                0,
+                6743,
                 'body':
-                0,
+                6746,
                 'winners':
-                0,
+                6746,
                 'shortlist':
-                0,
+                6746,
                 'judges':
-                0,
+                6747,
                 'special':
-                0,
+                6748,
                 'previous':
-                0,
+                6749,
                 'judges_bios':
                 0,
                 'judges_lp':
@@ -366,19 +366,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/collaboration-culture-judges',
                 'hero':
-                0,
+                6751,
                 'body':
-                0,
+                6752,
                 'winners':
-                0,
+                6752,
                 'shortlist':
-                0,
+                6752,
                 'judges':
-                0,
+                6753,
                 'special':
-                0,
+                6754,
                 'previous':
-                0,
+                6755,
                 'judges_bios':
                 0,
                 'judges_lp':
@@ -442,19 +442,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/sustained-growth-judges',
                 'hero':
-                0,
+                6756,
                 'body':
-                0,
+                6757,
                 'winners':
-                0,
+                6757,
                 'shortlist':
-                0,
+                6757,
                 'judges':
-                0,
+                6758,
                 'special':
-                0,
+                6759,
                 'previous':
-                0,
+                6760,
                 'judges_bios':
                 0,
                 'judges_lp':
@@ -518,19 +518,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/instant-impact-judges',
                 'hero':
-                0,
+                6761,
                 'body':
-                0,
+                6762,
                 'winners':
-                0,
+                6762,
                 'shortlist':
-                0,
+                6762,
                 'judges':
-                0,
+                6763,
                 'special':
-                0,
+                6764,
                 'previous':
-                0,
+                6765,
                 'judges_bios':
                 0,
                 'judges_lp':
@@ -594,19 +594,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/brand-purpose-judges',
                 'hero':
-                0,
+                6766,
                 'body':
-                0,
+                6767,
                 'winners':
-                0,
+                6767,
                 'shortlist':
-                0,
+                6767,
                 'judges':
-                0,
+                6768,
                 'special':
-                0,
+                6769,
                 'previous':
-                0,
+                6770,
                 'judges_bios':
                 0,
                 'judges_lp':
@@ -670,19 +670,19 @@ AWARDS = {
                 'category_href':
                 '?awards/effectiveness/business-to-business-judges',
                 'hero':
-                0,
+                6771,
                 'body':
-                0,
+                6772,
                 'winners':
-                0,
+                6772,
                 'shortlist':
-                0,
+                6772,
                 'judges':
-                0,
+                6773,
                 'special':
-                0,
+                6774,
                 'previous':
-                0,
+                6775,
                 'judges_bios':
                 0,
                 'judges_lp':
