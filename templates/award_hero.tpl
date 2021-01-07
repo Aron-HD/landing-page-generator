@@ -1,4 +1,4 @@
-{% extends "preview.tpl" %}
+<!-- {% extends "preview.tpl" %} -->
 {% block content %}
 <section class="section-splash" style="background-image: url(/images/WARCSiteContent/landing-pages/awards/{{ d.award }}/{{ d.image }});">
 	<div class="container-wide">
