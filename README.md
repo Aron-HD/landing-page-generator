@@ -25,6 +25,7 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 
 ### ToDo
 
+- add copy elements in data folder either as txt files or as csv values / columns
 - rewrite README
 - write tests
 - add License
