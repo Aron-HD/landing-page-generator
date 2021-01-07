@@ -1,7 +1,7 @@
 /_archive
+/static/html/**/*.html
 sandbox.py
 *.pyc
-*.html
 *.csv
 *.sublime-project
 *.sublime-workspace
