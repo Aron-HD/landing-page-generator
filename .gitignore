@@ -1,5 +1,6 @@
 /_archive
 /static/html/**/*.html
+/templates/preview*.html
 sandbox.py
 *.pyc
 *.csv
