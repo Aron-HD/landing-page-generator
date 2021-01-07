@@ -12,12 +12,17 @@ env = Environment(
 
 ### CLI / GUI Inputs
 values = {}
-values['date'] = '29/10/2020'
-values['page'] = "winners"
-values['cat'] = "data" # make this able to pass in a list of cats too
-values['award'] = "media"
-values['entry_kit'] = "MENAPrize2020-entrykit_v2.pdf"
-values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
+try:
+	values['date'] = '01/01/2021'
+	values['page'] = list(input("enter page ('special' 'body' 'category_hero'): ").strip().split(' '))
+	values['award'] = 'effectiveness'# input("enter award ('effectiveness'): ")
+	values['cat'] = list(input("enter category: ").strip().split(' ')) # make this able to pass in a list of cats too
+	values['entry_kit'] = "effectiveness2021-entrykit.pdf"
+	values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
+	print(values['page'], values['cat'])
+except KeyError as e:
+	print('invalid key input lists separated by spaces', e)
+	raise SystemExit
 
 # init as class
 data = {}
@@ -40,35 +45,44 @@ def get_csv(cat, page): # swap page for path
 		print('no csv read')
 		return False
 
-# make this a class TemplateData: that imports from package /template_data with helpers in too
-def get_data():
+def get_data(date, page, award, category):
 			
 	# init as class common ones have rest as functions
-	date = values['date']
-	awd = values['award']
-	cat = values['cat']
-	page = values['page']
+	# date = values['date']
+	# award = values['award']
+	# category = values['cat']
+	# page = values['page']
 
 	data.update({	                               # get each elmt using awd_elmt() from AWARDS dictionary
-		"award":       awd,                        # and take input from gui window / cli and feed into temporary 
-		"cat":         cat,                        # data dictionary for rendering template
+		# "award":       award,                      # and take input from gui window / cli and feed into temporary 
+		"cat":         category,                   # data dictionary for rendering template
 		"year":        func.process_date(date)[2], # should shrink this to just get date from now
-		 page:         func.awd_elmt(awd, cat, page),
-		"code":        AWARDS[awd]['code'],	      
-		"cartridge":   AWARDS[awd]['cartridge'],
+		 page:         func.awd_elmt(award, category, page),
+		"code":        AWARDS[award]['code'],	      
+		"cartridge":   AWARDS[award]['cartridge'],
 		"entry_kit":   values['entry_kit'].replace('.pdf',''),
-		"report":      AWARDS[awd]['categories'][cat]['report'],
+		"report":      AWARDS[award]['categories'][category]['report'],
 		"report_link": values['report_link'],
-		"full_award":  AWARDS[awd]['full_award'],
-	  	"special_awards": AWARDS[awd]['categories'][cat]['special_awards'],
+		"full_award":  AWARDS[award]['full_award'],
+	  	"special_awards": AWARDS[award]['categories'][category]['special_awards'],
 	})
 
+	placeholder = "Pariatur exercitation qui aute eu veniam cillum ea excepteur sint. Sint tempor ea irure veniam proident ut pariatur consequat duis voluptate incididunt amet laborum reprehenderit aute dolore tempor nostrud anim magna adipisicing in ut et reprehenderit exercitation mollit in."
+	# function only for when needed (category hero)
+	data.update({
+			"full_category": AWARDS[award]['categories'][category]['full_category'], 
+			"category_description": placeholder
+			# "category_description": AWARDS[award]['categories'][category]['category_description']
+		})
+
+	# function for (body copy)
+	data.update({"body_copy": placeholder})
 	# {papers / judges / winners / shortlist}
 	# have each as individual function on GUI / 
 	# if radio input is true then get_csv that thing
 	# get_csv(cat, page) if value for value in values True else pass
 	# so that only necessary info is added to dict
-	data.update({"papers": get_csv(cat, page)})
+	data.update({"papers": get_csv(category, page)})
 	# def function(): 
 	'''To sort judges bios.'''
 	# chair? for testimonial
@@ -78,31 +92,45 @@ def get_data():
 	# also need to read in csvs
 	# data.update({"judges": ?})
 
-	return data, page
+	return data
 
 def write_html(filename, output):
 	with open(filename, "w") as f:
 		f.write(output)
+	print("wrote:", filename)
 	# subprocess.run([filename], check=True)
 
-def main():
-	# for page in pages ticked on gui
+# make this a class LandingPage: that imports from package /template_data with helpers in too
+def build_page(date, page, award, category):
 	try:
 		# run_tests()
-		d, pg = get_data()
-		awd = d['award']
+		d = get_data(date, page, award, category)
+		# awd = d['award']
 		yr = d['year']
-		cat = d['cat']
-		elmt = func.awd_elmt(awd, cat, pg)
+		# cat = d['cat']
+		elmt = func.awd_elmt(
+			page=page.replace('category_', '').replace('award_', '').replace('preview-', ''),
+			award=award, 
+			category=category
+		)
 
-		# do all this string processing elsewhere 
-		fn = func.save_name(pg, awd, cat, yr, elmt) #<<<-----------------
+		# bring these functions into class
+		fn = func.save_name(page, award, category, yr, elmt)
 
-		output = env.get_template(f'{pg}.html').render(d=d, page=pg)#tpl.render
+		output = env.get_template(f'{page}.html').render(d=d, page=page)#tpl.render
 		write_html(fn, output)
-		print("wrote:", fn)
 	except Exception as e:
 		raise e
+
+# have this as runner file with classes and GUI/frontend as packages
+def main():
+	
+	date = values['date']
+	award = values['award']
+
+	for page in values['page']:
+		for category in values['cat']:
+			build_page(date, page, award, category) # make this class
 
 def main1():
 	
