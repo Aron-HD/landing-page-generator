@@ -41,14 +41,12 @@ AWARDS = {
                 'spec_bio2': '',
                 'spec_award3': '',
                 'spec_bio3': '',
-                'spec_award4': '?',
-                'spec_bio4': '?',
-                'spec_award5': '?',
-                'spec_bio5': '?',
-                'special_awards': {
-                    '?': '?'
-                },
-                '?': '?'
+                'spec_award4': '',
+                'spec_bio4': '',
+                'spec_award5': '',
+                'spec_bio5': '',
+                'body_copy': '',
+                'special_awards': {}
             }
         }
     },
@@ -99,6 +97,7 @@ AWARDS = {
                 'spec_bio4': '',
                 'spec_award5': '',
                 'spec_bio5': '',
+                'body_copy': '',
                 'special_awards': {}
             },
             'data': {
@@ -132,6 +131,7 @@ AWARDS = {
                 'spec_bio4': '',
                 'spec_award5': '',
                 'spec_bio5': '',
+                'body_copy': '',
                 'special_awards': {}
             },
             'partnerships': {
@@ -168,6 +168,7 @@ AWARDS = {
                 'spec_bio4': '',
                 'spec_award5': '',
                 'spec_bio5': '',
+                'body_copy': '',
                 'special_awards': {}
             },
             'tech': {
@@ -201,6 +202,7 @@ AWARDS = {
                 'spec_bio4': '',
                 'spec_award5': '',
                 'spec_bio5': '',
+                'body_copy': '',
                 'special_awards': {}
             }
         }
@@ -251,6 +253,7 @@ AWARDS = {
                 'spec_bio4': '',
                 'spec_award5': '',
                 'spec_bio5': '',
+                'body_copy': '',
                 'special_awards': {}
             }
         }
@@ -314,15 +317,15 @@ AWARDS = {
                 'spec_award1':
                 'Best Use of Tech',
                 'spec_bio1':
-                'for an experience that deployed tech in an original way to connect with a target audience.',
+                'For an experience that deployed tech in an original way to connect with a target audience.',
                 'spec_award2':
                 'Best Home Experience',
                 'spec_bio2':
-                'for a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
+                'For a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
                 'spec_award3':
                 'Personalisation & Insight Award',
                 'spec_bio3':
-                'how a new approach to insight informed an effective customer experience solution.',
+                'How a new approach to insight informed an effective customer experience solution.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -331,20 +334,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'Awarding new ways of engaging with consumers and innovative experiences created to connect and immerse on the path to commercial success. Work entered in this category should push the boundaries of interaction, engagement and loyalty. Customer experience can encompass a physical or a digital experience, or a combination of both.',
                 'special_awards': {
                     'Best Use of Tech':
-                    'for an experience that deployed tech in an original way to connect with a target audience.',
+                    'For an experience that deployed tech in an original way to connect with a target audience.',
                     'Best Home Experience':
-                    'for a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
+                    'For a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
                     'Personalisation & Insight Award':
-                    'how a new approach to insight informed an effective customer experience solution.'
+                    'How a new approach to insight informed an effective customer experience solution.'
                 },
                 'Best Use of Tech':
-                'for an experience that deployed tech in an original way to connect with a target audience.',
+                'For an experience that deployed tech in an original way to connect with a target audience.',
                 'Best Home Experience':
-                'for a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
+                'For a purely digital experience at home that successfully resonated with audiences and drove effectiveness.',
                 'Personalisation & Insight Award':
-                'how a new approach to insight informed an effective customer experience solution.'
+                'How a new approach to insight informed an effective customer experience solution.'
             },
             'culture': {
                 'award':
@@ -390,15 +395,15 @@ AWARDS = {
                 'spec_award1':
                 'The Culture-Creator Award',
                 'spec_bio1':
-                'for an effective strategy based on a brand creating its own content.',
+                'For an effective strategy based on a brand creating its own content.',
                 'spec_award2':
                 'Best Community-Builder Award',
                 'spec_bio2':
-                'for an effective strategy that resonated with a particular community.',
+                'For an effective strategy that resonated with a particular community.',
                 'spec_award3':
                 'Social Data Award',
                 'spec_bio3':
-                'for how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.',
+                'For how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -407,20 +412,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'This category will reward strategies and instances of brands entering or impacting on culture that can demonstrate a business outcome. The judges will be looking for evidence of how these approaches helped a brand achieve business goals. This might include sponsorships or partnerships, short-form social video or long-form video, native advertising or advertiser-funded TV shows.',
                 'special_awards': {
                     'The Culture-Creator Award':
-                    'for an effective strategy based on a brand creating its own content.',
+                    'For an effective strategy based on a brand creating its own content.',
                     'Best Community-Builder Award':
-                    'for an effective strategy that resonated with a particular community.',
+                    'For an effective strategy that resonated with a particular community.',
                     'Social Data Award':
-                    'for how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.'
+                    'For how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.'
                 },
                 'The Culture-Creator Award':
-                'for an effective strategy based on a brand creating its own content.',
+                'For an effective strategy based on a brand creating its own content.',
                 'Best Community-Builder Award':
-                'for an effective strategy that resonated with a particular community.',
+                'For an effective strategy that resonated with a particular community.',
                 'Social Data Award':
-                'for how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.'
+                'For how data and insights gleaned from social platforms informed an effective collaboration/culture strategy.'
             },
             'growth': {
                 'award':
@@ -466,15 +473,15 @@ AWARDS = {
                 'spec_award1':
                 'Reinvention Award',
                 'spec_bio1':
-                'for the best example of a brand successfully modernising an existing communications platform or positioning.',
+                'For the best example of a brand successfully modernising an existing communications platform or positioning.',
                 'spec_award2':
                 'Data Application Award',
                 'spec_bio2':
-                'for a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
+                'For a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
                 'spec_award3':
                 'Global Growth Award',
                 'spec_bio3':
-                'for the best multimarket brand-building campaign.',
+                'For the best multimarket brand-building campaign.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -483,20 +490,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'For campaigns that have invested in building a brand over time (12 months or more). The judges will look for long-term creative commitments in both budget and campaign duration, as well as compelling evidence that brand investments have made a demonstrable impact on the business.',
                 'special_awards': {
                     'Reinvention Award':
-                    'for the best example of a brand successfully modernising an existing communications platform or positioning.',
+                    'For the best example of a brand successfully modernising an existing communications platform or positioning.',
                     'Data Application Award':
-                    'for a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
+                    'For a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
                     'Global Growth Award':
-                    'for the best multimarket brand-building campaign.'
+                    'For the best multimarket brand-building campaign.'
                 },
                 'Reinvention Award':
-                'for the best example of a brand successfully modernising an existing communications platform or positioning.',
+                'For the best example of a brand successfully modernising an existing communications platform or positioning.',
                 'Data Application Award':
-                'for a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
+                'For a campaign that applied data and insight in an effective way, or took a new approach to measurement.',
                 'Global Growth Award':
-                'for the best multimarket brand-building campaign.'
+                'For the best multimarket brand-building campaign.'
             },
             'impact': {
                 'award':
@@ -542,15 +551,15 @@ AWARDS = {
                 'spec_award1':
                 'Creative Catalyst Award',
                 'spec_bio1':
-                'rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
+                'Rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
                 'spec_award2':
                 'Original Promotional Idea',
                 'spec_bio2':
-                'for a campaign that deployed an original promotional mechanic.',
+                'For a campaign that deployed an original promotional mechanic.',
                 'spec_award3':
                 'Data-Driven Impact',
                 'spec_bio3':
-                'for how data-led insight helped achieve short-term results.',
+                'For how data-led insight helped achieve short-term results.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -559,20 +568,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'This category rewards short-term campaigns (with a duration of six months or less) that led directly to a sales increase. The judges will seek robust proof that the campaign directly drove sales.',
                 'special_awards': {
                     'Creative Catalyst Award':
-                    'rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
+                    'Rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
                     'Original Promotional Idea':
-                    'for a campaign that deployed an original promotional mechanic.',
+                    'For a campaign that deployed an original promotional mechanic.',
                     'Data-Driven Impact':
-                    'for how data-led insight helped achieve short-term results.'
+                    'For how data-led insight helped achieve short-term results.'
                 },
                 'Creative Catalyst Award':
-                'rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
+                'Rewarding a tactical idea that complemented more long-term brand activity and showed a demonstrable sales spike.',
                 'Original Promotional Idea':
-                'for a campaign that deployed an original promotional mechanic.',
+                'For a campaign that deployed an original promotional mechanic.',
                 'Data-Driven Impact':
-                'for how data-led insight helped achieve short-term results.'
+                'For how data-led insight helped achieve short-term results.'
             },
             'purpose': {
                 'award':
@@ -618,15 +629,15 @@ AWARDS = {
                 'spec_award1':
                 'Sustainability Award',
                 'spec_bio1':
-                'for a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
+                'For a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
                 'spec_award2':
                 'Data & Evaluation Award',
                 'spec_bio2':
-                'for a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
+                'For a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
                 'spec_award3':
                 'Employee Engagement Award',
                 'spec_bio3':
-                'rewarding a purpose-led strategy for consistency both inside and outside an organisation.',
+                'Rewarding a purpose-led strategy for consistency both inside and outside an organisation.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -635,20 +646,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'For marketing initiatives that have successfully embraced a brand purpose and achieved commercial success as well as benefit for the wider community. Entries should demonstrate clear evidence of how a brand purpose has both achieved societal impact and met commercial goals. <b>Please note:</b> campaigns for charities or non-profits will not be accepted in this category.',
                 'special_awards': {
                     'Sustainability Award':
-                    'for a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
+                    'For a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
                     'Data & Evaluation Award':
-                    'for a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
+                    'For a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
                     'Employee Engagement Award':
-                    'rewarding a purpose-led strategy for consistency both inside and outside an organisation.'
+                    'Rewarding a purpose-led strategy for consistency both inside and outside an organisation.'
                 },
                 'Sustainability Award':
-                'for a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
+                'For a brand that has replaced a strategy or business practice with a more sustainable alternative and can prove that it has contributed to long-term brand health.',
                 'Data & Evaluation Award':
-                'for a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
+                'For a brand purpose strategy that has gone the extra mile in measuring both commercial and societal impact.',
                 'Employee Engagement Award':
-                'rewarding a purpose-led strategy for consistency both inside and outside an organisation.'
+                'Rewarding a purpose-led strategy for consistency both inside and outside an organisation.'
             },
             'business': {
                 'award':
@@ -694,15 +707,15 @@ AWARDS = {
                 'spec_award1':
                 'Virtual Experience Award',
                 'spec_bio1':
-                'for business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
+                'For business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
                 'spec_award2':
                 'Audience Award',
                 'spec_bio2':
-                'for effective marketing built on fresh audience insight.',
+                'For effective marketing built on fresh audience insight.',
                 'spec_award3':
                 'Partnership Award',
                 'spec_bio3':
-                'for a collaborative approach that unlocked effectiveness.',
+                'For a collaborative approach that unlocked effectiveness.',
                 'spec_award4':
                 '',
                 'spec_bio4':
@@ -711,20 +724,22 @@ AWARDS = {
                 '',
                 'spec_bio5':
                 '',
+                'body_copy':
+                'This category will reward effective campaigns from one business targeting another.',
                 'special_awards': {
                     'Virtual Experience Award':
-                    'for business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
+                    'For business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
                     'Audience Award':
-                    'for effective marketing built on fresh audience insight.',
+                    'For effective marketing built on fresh audience insight.',
                     'Partnership Award':
-                    'for a collaborative approach that unlocked effectiveness.'
+                    'For a collaborative approach that unlocked effectiveness.'
                 },
                 'Virtual Experience Award':
-                'for business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
+                'For business-to-business brands that have created engaging virtual experiences for their audiences that have delivered impact and commercial results.',
                 'Audience Award':
-                'for effective marketing built on fresh audience insight.',
+                'For effective marketing built on fresh audience insight.',
                 'Partnership Award':
-                'for a collaborative approach that unlocked effectiveness.'
+                'For a collaborative approach that unlocked effectiveness.'
             }
         }
     }
