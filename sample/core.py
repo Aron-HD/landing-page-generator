@@ -71,12 +71,13 @@ def get_data(date, page, award, category):
 	# function only for when needed (category hero)
 	data.update({
 			"full_category": AWARDS[award]['categories'][category]['full_category'], 
-			"category_description": placeholder
+			"category_description": AWARDS[award]['categories'][category]['body_copy'].split(".")[0]
 			# "category_description": AWARDS[award]['categories'][category]['category_description']
 		})
 
 	# function for (body copy)
-	data.update({"body_copy": placeholder})
+	# data.update({"body_copy": placeholder})
+	data.update({"body_copy": AWARDS[award]['categories'][category]['body_copy']})
 	# {papers / judges / winners / shortlist}
 	# have each as individual function on GUI / 
 	# if radio input is true then get_csv that thing
@@ -98,55 +99,81 @@ def write_html(filename, output):
 	with open(filename, "w") as f:
 		f.write(output)
 	print("wrote:", filename)
-	# subprocess.run([filename], check=True)
+
 
 # make this a class LandingPage: that imports from package /template_data with helpers in too
-def build_page(date, page, award, category):
+def get_html(date, page, award, category):
+	'''Returns a filename, its output content and its page element code.'''
 	try:
-		# run_tests()
 		d = get_data(date, page, award, category)
-		# awd = d['award']
 		yr = d['year']
-		# cat = d['cat']
 		elmt = func.awd_elmt(
 			page=page.replace('category_', '').replace('award_', '').replace('preview-', ''),
 			award=award, 
 			category=category
 		)
-
 		# bring these functions into class
 		fn = func.save_name(page, award, category, yr, elmt)
 
-		output = env.get_template(f'{page}.html').render(d=d, page=page)#tpl.render
-		write_html(fn, output)
+		out = env.get_template(f'{page}.html').render(d=d, page=page)#tpl.render
+		return fn, out, elmt
 	except Exception as e:
 		raise e
+
+
+def update_page(assets):
+	print('\nselected write files to CMS...')
+	# from cmsbot.cmsbot import CMSBot # import here so only if selected?
+	cms = CMSBot() 
+	for name, page_element, content in assets:
+		print(name)
+		print(page_element)
+		print(content)
+		cms.edit_page(page_element) 
+		cms.paste_content(content)
+
+
+class CMSBot:
+ 	def __init__(self):
+ 		self.bot = 'selenium.driver'
+
+ 	def edit_page(self, element):
+ 		pass
+
+ 	def paste_content(self, content):
+ 		pass
 
 # have this as runner file with classes and GUI/frontend as packages
 def main():
 	
 	date = values['date']
 	award = values['award']
+	written_assets = []
 
 	for page in values['page']:
 		for category in values['cat']:
-			build_page(date, page, award, category) # make this class
+			file, output, element = get_html(date, page, award, category)
+			write_html(file, output)
+			fname = Path(file).name
+			written_assets.append((fname, element, output))
 
-def main1():
+	print("\nfiles written:\n")
+	[print(f) for f, e, o in written_assets]
+	string = f"\nupdate CMS articles with each file's content?\n\t- select 'Y' or 'N': "
+	select = input(string).casefold()
+
+	if select != 'y':
+		return False
+	else:
+		update_page(written_assets)
+		
+# def main1():
 	
-	for f in glob(r"../templates/*.html"):
-		print(f)
-		for line in f:
-			tag = line.find(r'{{')
-			print(tag)
-
-
-# {{ year }}
-# {{ report_link }}
-# {{ report }}
-# {{ full_award }}
-# {{ award }}
-# {{ entry_kit }}
+# 	for f in glob(r"../templates/*.html"):
+# 		print(f)
+# 		for line in f:
+# 			tag = line.find(r'{{')
+# 			print(tag)
 
 
 if __name__ == '__main__':
