@@ -1,0 +1,35 @@
+
+:root {
+	--warc-blue: #35307A;
+	--purple: #4C2949;
+	--light-purple: #9C415A;
+	--orange: #E5534B;
+	--gold: #F2BC1B;
+	--light-gold: #FAEE92;
+	--cream: #FEFDEF;
+}
+
+.tiles-double .tile {
+	background-color: var(--light-gold);
+}
+
+.testimonial-position {
+	color: var(--light-gold);
+}
+
+.section-split {
+	background-image:linear-gradient(to right,#f4f5f7,#f4f5f7 50%,var(--light-purple) 50%,var(--light-purple) 100%)
+}
+
+.section-split .split-2 {
+	background-color: var(--light-purple);
+}
+
+.section-split.split-dark .split-1, 
+.section-split.split-dark .split-2 {
+	background-color: var(--purple);
+}
+
+.section-split.split-dark {
+	background-color: var(--purple);
+}
