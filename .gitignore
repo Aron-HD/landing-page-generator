@@ -1,7 +1,14 @@
 /_archive
 /static/html/**/*.html
-*preview*.html
+
+# individual files
 sandbox.py
+dictionary.py
+
+# file types
+*.jpg
+*.png
+*preview*.html
 *.pyc
 *.csv
 *.sublime-project
