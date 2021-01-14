@@ -13,6 +13,7 @@ AWARDS = {
         'about': 5694,
         'previous': 'category',
         'entry_details': 5707,
+        'insights': 6692,
         'categories': {
             'asia': {
                 'award': 'asia',
@@ -64,6 +65,7 @@ AWARDS = {
         'about': 6669,
         'previous': 'category',
         'entry_details': 6671,
+        'insights': 6672,
         'categories': {
             'channel': {
                 'award': 'media',
@@ -221,6 +223,7 @@ AWARDS = {
         'about': 5638,
         'previous': 'category',
         'entry_details': 5639,
+        'insights': 6690,
         'categories': {
             'mena': {
                 'award': 'mena',
@@ -272,6 +275,7 @@ AWARDS = {
         'about': 6738,
         'previous': 'category',
         'entry_details': 6740,
+        'insights': 6741,
         'categories': {
             'experience': {
                 'award':
