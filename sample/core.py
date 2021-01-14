@@ -18,12 +18,12 @@ try:
     values['page'] = list(
         input("enter page ('special' 'body' 'category_hero'): ").strip().split(' '))
     # input("enter award ('effectiveness'): ")
-    values['award'] = 'effectiveness'
+    values['award'] = input('award: ')
     # make this able to pass in a list of cats too
     values['cat'] = list(input("enter category: ").strip().split(' '))
-    values['entry_kit'] = "effectiveness2021-entrykit.pdf"
+    values['entry_kit'] = "MENAPrize2020-entrykit_v2.pdf"
     values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
-    # print(values['page'], values['cat'])
+    values['report_image'] = '../winner-2020.jpg'
 except KeyError as e:
     print('invalid key input lists separated by spaces', e)
     raise SystemExit
@@ -78,8 +78,8 @@ def get_data(date, page, award, category):
     # function only for when needed (category hero)
     data.update({
         "full_category": AWARDS[award]['categories'][category]['full_category'],
-        "category_description": AWARDS[award]['categories'][category]['body_copy'].split(".")[0]
-        # "category_description": AWARDS[award]['categories'][category]['category_description']
+        "category_description": AWARDS[award]['categories'][category]['body_copy'].split(".")[0],
+        "report_image": values['report_image']
     })
 
     # function for (body copy)
