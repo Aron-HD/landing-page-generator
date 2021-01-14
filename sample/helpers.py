@@ -21,7 +21,7 @@ class Functions:
                 code = AWARDS[award][page]
                 return code
         except KeyError:
-            log.error('page not found in awards dictionary keys')
+            log.error('page not found in awards dictionary keys:', page)
 
     def process_date(date):
         '''To process input date and current year.'''
