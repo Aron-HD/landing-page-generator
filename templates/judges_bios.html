@@ -7,22 +7,22 @@
 
 <section class="container-wide padding-t-biggest">
   <div class="tiles-people">
-    {% for j in d.panel %}
-    <div class="tile" id="{{ j.name.lower().replace(' ', '-').replace('\'', '-') }}">
+    {% for j in d.judges %}
+    <div class="tile" id="{{ j.Name.lower() + '-' + j.Surname.lower() }}">
       <div class="person-main">
         <div class="person-name">
-          <h4>{{ j.name }}</h4>
+          <h4>{{ j.Name + ' ' + j.Surname }}</h4>
         </div>
         <div class="person-bio">
           <p>
-            <span class="tag">{{ j.title }}</span>
+            <span class="tag">{{ j.Title + ", " + j.Company }}</span>
             <br>
-            {{ j.bio }}
+            {{ j.Bio }}
           </p>
         </div>
       </div>
       <div class="person-image">
-        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ j.name.lower().replace(' ', '-').replace('\'', '-') }}.jpg" alt="{{ j.name }}">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ j.Name.lower() + '-' + j.Surname.lower() }}.jpg" alt="{{ j.Name }}">
       </div>
     </div>
     {% endfor %}
