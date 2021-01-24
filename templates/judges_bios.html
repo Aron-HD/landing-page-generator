@@ -1,5 +1,34 @@
-{% extends "preview.html" %}
-{% block content %}
 <!-- JUDGES BIOS -->
-<h3>{{ page.title().replace('_',' ') }}</h3>
-{% endblock %}
+<section class="section-title-text">
+  <div class="container-fluid nested">
+    <h1>{{ d.full_category }}: {{ d.year }} Judges</h1>
+  </div>
+</section>
+
+<section class="container-wide padding-t-biggest">
+  <div class="tiles-people">
+    {% for j in d.panel %}
+    <div class="tile" id="{{ j.name.lower().replace(' ', '-').replace('\'', '-') }}">
+      <div class="person-main">
+        <div class="person-name">
+          <h4>{{ j.name }}</h4>
+        </div>
+        <div class="person-bio">
+          <p>
+            <span class="tag">{{ j.title }}</span>
+            <br>
+            {{ j.bio }}
+          </p>
+        </div>
+      </div>
+      <div class="person-image">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ j.name.lower().replace(' ', '-').replace('\'', '-') }}.jpg" alt="{{ j.name }}">
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<div class="container-wide text-center margin-t-big margin-b-medium">
+  <p><a href="/awards/{{ d.award }}" class="link-backwards">Back to the {{ d.full_award }} page</a></p>
+</div>
