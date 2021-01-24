@@ -36,15 +36,16 @@ def get_csv(cat, page):  # swap page for path
     '''Reads in csv data for shortlist, winners or judges.'''
     log.debug('reading csv')
     try:
+        pg = page.replace('preview-', '').replace('_bios', '') # strip other tags
         path = {  # pass in path object in respective functions when class
             'shortlist': f'../data/csv/shortlists/{cat}_shortlist.csv',
             'winners': f'../data/csv/{cat}_winners.csv',
             'judges': f'../data/csv/{cat}-judges.csv'
         }
-        df = pd.read_csv(path[page])
+        df = pd.read_csv(path[pg])
         return df.to_dict('records')
     except UnicodeError:
-        df = pd.read_csv(path[page], encoding='cp1252')
+        df = pd.read_csv(path[pg], encoding='cp1252')
         return df.to_dict('records')
     except KeyError:
         log.debug('no csv read')
@@ -92,6 +93,11 @@ def get_data(date, page, award, category):
     # get_csv(cat, page) if value for value in values True else pass
     # so that only necessary info is added to dict
     data.update({"papers": get_csv(category, page)})
+    
+    if 'judges' in page:
+        data.update({"judges": get_csv(category, page)})
+        print('Panel chair:\n', data['judges'][0]['Name'], data['judges'][0]['Surname'])
+
     # def function():
     '''To sort judges bios.'''
     # chair? for testimonial
@@ -107,7 +113,7 @@ def get_data(date, page, award, category):
 def write_html(filename, output):
     with open(filename, "w") as f:
         f.write(output)
-    log.info("wrote:", filename)
+    print("Wrote -->", filename)
 
 
 # make this a class LandingPage: that imports from package /template_data with helpers in too
