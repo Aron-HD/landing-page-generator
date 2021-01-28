@@ -3,7 +3,7 @@ import logging as log  # time # comment this once get_csv moved?
 from glob import glob
 from pathlib import Path
 
-import dictionary as AWARDS
+from dictionary import AWARDS
 from helpers import Functions as func
 
 # Jinja Imports
