@@ -17,11 +17,11 @@ try:
     values['date'] = '01/01/2021'
     values['page'] = list(
         input("enter page ('special' 'body' 'category_hero'): ").strip().split(' '))
-    # input("enter award ('effectiveness'): ")
+    values['open'] = True # effects whether to display registration, deadline, entry links
     values['award'] = input('award: ')
     # make this able to pass in a list of cats too
     values['cat'] = list(input("enter category: ").strip().split(' '))
-    values['entry_kit'] = "MENAPrize2020-entrykit_v2.pdf"
+    values['entry_kit'] = "MENAPrize2021-entrykit.pdf"
     values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
     values['report_image'] = '../winner-2020.jpg'
 except KeyError as e:
@@ -56,19 +56,19 @@ def get_data(date, page, award, category):
 
     # init as class common ones have rest as functions
     # date = values['date']
-    # award = values['award']
+    award = values['award']
     # category = values['cat']
     # page = values['page']
 
     data.update({	                               # get each elmt using awd_elmt() from AWARDS dictionary
-        # "award":       award,                      # and take input from gui window / cli and feed into temporary
+        "award":       award,                      # and take input from gui window / cli and feed into temporary
         "cat":         category,                   # data dictionary for rendering template
         # should shrink this to just get date from now
         "year":        func.process_date(date)[2],
         page:         func.awd_elmt(award, category, page),
         "code":        AWARDS[award]['code'],
         "cartridge":   AWARDS[award]['cartridge'],
-        "entry_kit":   values['entry_kit'].replace('.pdf', ''),
+        "entry_kit":   values['entry_kit'],
         "report":      AWARDS[award]['categories'][category]['report'],
         "report_link": values['report_link'],
         "full_award":  AWARDS[award]['full_award'],
@@ -98,14 +98,13 @@ def get_data(date, page, award, category):
         data.update({"judges": get_csv(category, page)})
         print('Panel chair:\n', data['judges'][0]['Name'], data['judges'][0]['Surname'])
 
-    # def function():
-    '''To sort judges bios.'''
-    # chair? for testimonial
-    # chair = get_chair(category=cat)
-
-    # pics and bios should be covered in above
-    # also need to read in csvs
-    # data.update({"judges": ?})
+    if 'entry' in page:
+        entry_form = AWARDS[award]['prize'] + data['year'] + '-entryform.docx'
+        data.update({"entry_form": entry_form, "open": values['open']})
+    
+    if 'entry' or 'about' in page:
+        deadline = input('Deadline for entries?: ')
+        data.update({"deadline": deadline})
 
     return data
 
