@@ -3,7 +3,7 @@ import logging as log  # time # comment this once get_csv moved?
 from glob import glob
 from pathlib import Path
 
-from dictionary import AWARDS
+import dictionary as AWARDS
 from helpers import Functions as func
 
 # Jinja Imports
@@ -59,7 +59,7 @@ def get_data(date, page, award, category):
     award = values['award']
     # category = values['cat']
     # page = values['page']
-
+    
     data.update({	                               # get each elmt using awd_elmt() from AWARDS dictionary
         "award":       award,                      # and take input from gui window / cli and feed into temporary
         "cat":         category,                   # data dictionary for rendering template
