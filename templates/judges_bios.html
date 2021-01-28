@@ -8,10 +8,31 @@
 <section class="container-wide padding-t-biggest">
   <div class="tiles-people">
     {% for j in d.judges %}
-    <div class="tile" id="{{ j.Name.lower() + '-' + j.Surname.lower() }}">
+    {% set jname = j.Name + ' ' + j.Surname -%}
+    {% set jtitle = j.Title + ', ' + j.Company -%}
+    {% if j.Bio|length > 5 -%}
+    <div class="tile" id="{{ jname.lower().replace(' ', '-') }}">
       <div class="person-main">
         <div class="person-name">
-          <h4>{{ j.Name + ' ' + j.Surname }}</h4>
+          <h4>{{ jname }}</h4>
+        </div>
+        <div class="person-bio">
+          <p>
+            <span class="tag">{{ jtitle }}</span>
+            <br>
+            {{ j.Bio }}
+          </p>
+        </div>
+      </div>
+      <div class="person-image">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
+      </div>
+    </div>
+    {% else -%}
+<!-- <div class="tile" id="{{ jname.lower().replace(' ', '-') }}">
+      <div class="person-main">
+        <div class="person-name">
+          <h4>{{ jname }}</h4>
         </div>
         <div class="person-bio">
           <p>
@@ -22,13 +43,18 @@
         </div>
       </div>
       <div class="person-image">
-        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ j.Name.lower() + '-' + j.Surname.lower() }}.jpg" alt="{{ j.Name }}">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/media/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
       </div>
-    </div>
+    </div> -->
+    {% endif -%}
     {% endfor %}
   </div>
 </section>
 
 <div class="container-wide text-center margin-t-big margin-b-medium">
-  <p><a href="/awards/{{ d.award }}" class="link-backwards">Back to the {{ d.full_award }} page</a></p>
+{%- if 'mena' in d.award or 'asia' in d.award %}
+  <p><a href="{{ d.url }}" class="link-backwards">Back to the {{ d.full_award }} page</a></p>
+{%- else %}
+  <p><a href="{{ d.url }}/{{ d.category }}" class="link-backwards">Back to the {{ d.full_category }} page</a></p>
+{% endif -%}
 </div>
