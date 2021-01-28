@@ -4,7 +4,7 @@ from glob import glob
 from pathlib import Path
 from datetime import datetime as dtm
 
-from dictionary import AWARDS
+import dictionary as AWARDS
 
 
 class Functions:
