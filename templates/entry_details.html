@@ -1,5 +1,32 @@
-{% extends "preview.html" %}
-{% block content %}
 <!-- ENTRY DETAILS -->
-<h3>{{ page.title().replace('_',' ') }}</h3>
-{% endblock %}
+<section class="section-default bg-background2">
+	<div class="container-fluid">
+		<h3>Entry details</h3>
+		<div class="tiles-double margin-t-medium">
+			<div class="tile-light">
+				<h4>Why enter?</h4>
+				<ul>
+					<li>Free to enter</li>
+					<li>All winning entries will be published and promoted on warc.com</li>
+					<li>Grow your personal and company reputation within the industry</li>
+					<li>Open to subscribers and non-subscribers of WARC</li>
+				</ul>
+			</div>
+			<div class="tile-light">
+				<h4>How to enter</h4>
+				<ul>
+					<li>Read the <a href="/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/{{ d.entry_kit }}">entry kit</a></li>
+					{%- if d.award != 'effectiveness' and d.open == True %}
+					<li><a href="www.warc.com/awards/{{ d.award }}">Register</a> your entry</li>
+					{% endif -%}
+					<li>Download the <a href="/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/{{ d.entry_form }}">entry form</a></li>
+					{%- if d.open == False %}
+					<li><strong>Entries are now closed</strong></li>
+					{% else %}
+					<li>Send us your entry by <strong>{{ d.deadline }}</strong></li>
+					{% endif -%}
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>
