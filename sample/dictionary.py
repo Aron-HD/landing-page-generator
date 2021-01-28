@@ -1,4 +1,4 @@
-AWARDS = {
+{
     'asia': {
         'lp': 224,
         'title': 'WARC Prize for Asian Strategy',
@@ -226,38 +226,90 @@ AWARDS = {
         'insights': 6690,
         'categories': {
             'mena': {
-                'award': 'mena',
-                'lp': 227,
-                'title': 'WARC Prize for MENA Strategy',
-                'url': 'awards/warc-prize-for-mena-strategy',
-                'category': 'mena',
-                'report': 'MENA Strategy Report',
-                'abbreviation': '',
-                'full_category': '',
-                'category_href': '/menaprize/2020judges',
-                'hero': 5636,
-                'body': 6689,
-                'winners': 6689,
-                'shortlist': 6689,
-                'judges': 5640,
-                'special': 0,
-                'previous': 5641,
-                'judges_bios': 5642,
-                'judges_lp': 7,
-                'judges_title': 'WARC Prize for MENA Strategy - 2020 Judges',
-                'judges_url': '/menaprize/2020judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'award':
+                'mena',
+                'lp':
+                227,
+                'title':
+                'WARC Prize for MENA Strategy',
+                'url':
+                'awards/warc-prize-for-mena-strategy',
+                'category':
+                'mena',
+                'report':
+                'MENA Strategy Report',
+                'abbreviation':
+                '',
+                'full_category':
+                '',
+                'category_href':
+                '/menaprize/2020judges',
+                'hero':
+                5636,
+                'body':
+                6689,
+                'winners':
+                6689,
+                'shortlist':
+                6689,
+                'judges':
+                5640,
+                'special':
+                0,
+                'previous':
+                5641,
+                'judges_bios':
+                5642,
+                'judges_lp':
+                7,
+                'judges_title':
+                'WARC Prize for MENA Strategy - 2020 Judges',
+                'judges_url':
+                '/menaprize/2020judges',
+                'spec_award1':
+                'The Research Excellence Award',
+                'spec_bio1':
+                'For the best use of research in the development of strategic ideas.',
+                'spec_award2':
+                'The Long-Term Strategy Award',
+                'spec_bio2':
+                'For the best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                'spec_award3':
+                'The Pivot to Digital Award',
+                'spec_bio3':
+                'For the best example of a brand digitising its products or services.',
+                'spec_award4':
+                'The Brand Rebel Award',
+                'spec_bio4':
+                'For the best example of a campaign departing from category norms.',
+                'spec_award5':
+                'The Local Hero Award',
+                'spec_bio5':
+                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. ',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'The Research Excellence Award':
+                    'For the best use of research in the development of strategic ideas.',
+                    'The Long-Term Strategy Award':
+                    'For the best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                    'The Pivot to Digital Award':
+                    'For the best example of a brand digitising its products or services.',
+                    'The Brand Rebel Award':
+                    'For the best example of a campaign departing from category norms.',
+                    'The Local Hero Award':
+                    'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. '
+                },
+                'The Research Excellence Award':
+                'For the best use of research in the development of strategic ideas.',
+                'The Long-Term Strategy Award':
+                'For the best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                'The Pivot to Digital Award':
+                'For the best example of a brand digitising its products or services.',
+                'The Brand Rebel Award':
+                'For the best example of a campaign departing from category norms.',
+                'The Local Hero Award':
+                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. '
             }
         }
     },
