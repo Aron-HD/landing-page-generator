@@ -1,0 +1,32 @@
+<!-- JUDGES PICS -->
+<section class="section-split split-dark">
+	<div>
+		<div class="split-1">
+			<h3>{{ d.year }} Judges</h3>
+			{%- set chair = d.judges[0] %}
+			{%- set cname = chair.Name + ' ' + chair.Surname %}
+			{%- set ctitle = chair.Title + ', ' + chair.Company %}
+			<!-- <p>A judging panel of industry experts will be announced in the coming weeks.</p> -->
+			<p>A judging panel of industry experts, chaired by {{ cname }}, {{ ctitle }}, will be reading the entries.</p>
+			{% include "judges_headshots.html" %}
+		</div>
+		<div class="split-2 split-testimonial">
+			<div class="testimonial-content">
+				<blockquote>
+					{{ d.quote }}
+				</blockquote>
+			</div>
+			<div class="testimonial-source">
+				<div class="testimonial-withheadshot">
+					<div class="testimonial-headshot">
+						<img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ cname.lower().replace(' ', '-') }}.jpg" alt="{{ cname }}">
+					</div>
+					<p>
+						<span class="testimonial-author">{{ cname }}, Chair of the Judges, {{ d.full_award }} {{ d.year }}</span><br>
+						<span class="testimonial-position">{{ ctitle }}</span>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
