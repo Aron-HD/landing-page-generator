@@ -47,6 +47,7 @@ def get_csv(cat, page):  # swap page for path
         path = {  # pass in path object in respective functions when class
             'shortlist': f'../data/csv/shortlists/{cat}_shortlist.csv',
             'winners': f'../data/csv/{cat}_winners.csv',
+            'previous': f'../data/csv/{cat}_winners.csv',
             'judges': f'../data/csv/{cat}-judges.csv'
         }
         df = pd.read_csv(path[page])
@@ -66,7 +67,7 @@ def get_data(date, page, award, category):
     # award = values['award']
     # category = values['cat']
     # page = values['page']
-    
+    data.update({"open": values['open']})
     data.update({	                               # get each elmt using awd_elmt() from AWARDS dictionary
         "award":       award,                      # and take input from gui window / cli and feed into temporary
         "cat":         category,                   # data dictionary for rendering template
@@ -100,19 +101,32 @@ def get_data(date, page, award, category):
     # get_csv(cat, page) if value for value in values True else pass
     # so that only necessary info is added to dict
     if any(i in page for i in ['winners', 'shortlist', 'previous']):
-        data.update({"papers": get_csv(category, page)})
+        papers = get_csv(category, page)
+        winning_ids = [
+            'A'+str(i['ID']) for i in papers if any(
+                [x in i['Award'].lower() for x in ['grand','gold','silver','bronze']]
+        )]
+        data.update({
+            "papers": papers,
+            "winners_ids": winning_ids,
+            "img_content_code": AWARDS[award]['img_content_code']
+        })
 
     if 'judges' in page:
         data.update({
             "judges": get_csv(category, page),
             "url": AWARDS[award]['url'],
-            "category": AWARDS[award]['categories'][category]['category']
+            "category": AWARDS[award]['categories'][category]['category'],
+            "category_href": AWARDS[award]['categories'][category]['category_href']
         })
         print('Panel chair:\n', data['judges'][0]['Name'], data['judges'][0]['Surname'])
 
+    if 'judges_split' in page:
+        data.update({"quote": input('Insert quote:\n')})
+
     if 'entry' in page:
         entry_form = AWARDS[award]['prize'] + data['year'] + '-entryform.docx'
-        data.update({"entry_form": entry_form, "open": values['open']})
+        data.update({"entry_form": entry_form})
     
     if 'entry' in page or 'about' in page:
         deadline = input('Deadline for entries?: ')
