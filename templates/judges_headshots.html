@@ -1,11 +1,12 @@
-<!-- JUDGES HEADSHOTS -->
-<div class="tiles-headshots">
-{%- if d.judges %}
-{%- for j in d.judges %}
-{%- set jname = j.Name + ' ' + j.Surname %}
-{%- set jtitle = j.Title + ', ' + j.Company %}
-    <a class="tile" href="/{{ WARCAwards }}/{{ d.category }}-judges.info#{{ jname.lower().replace(' ', '-') }}">
-        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.cat }}/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
-    </a>
-{% endfor %}{% endif -%}
-</div>
+			<!-- JUDGES HEADSHOTS -->
+			<div class="tiles-headshots">
+			{%- if d.judges %}
+			{%- for j in d.judges %}
+			{%- set jname = j.Name + ' ' + j.Surname %}
+			{%- set jtitle = j.Title + ', ' + j.Company %}
+			{%- if j.Bio|length > 5 %}
+			    <a class="tile" href="https://www.warc.com/{{ d.category_href }}#{{ jname.lower().replace(' ', '-') }}">
+			        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.cat }}/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
+			    </a>
+			{% endif %}{% endfor %}{% endif -%}
+			</div>

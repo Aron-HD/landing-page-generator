@@ -1,5 +1,29 @@
-{% extends "preview.html" %}
-{% block content %}
 <!-- ABOUT -->
-<h3>{{ page.title().replace('_',' ') }}</h3>
-{% endblock %}
+<section class="section-default">
+	<div class="container-fluid">
+		<h3>About</h3>
+		<div class="row justify-content-lg-between">
+			<div class="col-md-6 col-lg-5">
+				<!-- <p>{{ d.body_copy1 }}</p> -->
+				{% if d.open -%}
+				<p>The {{ d.full_award }} is open for entries.</p>
+				{% else -%}
+				<p>The {{ d.full_award }} is no longer accepting entries.</p>
+				{% endif -%}
+				<p>Across MENA, new markets and new consumers are demanding new insights. This Prize will act as a spur to strategic thinkers across the region by generating a collection of work that will inspire them to create breakthrough thinking for their clients.</p>
+				<p>We also need to know that the strategy 'worked'. Although this is not an effectiveness competition, we want to reward strategic thinking that helps clients solve problems and provides a base for future growth. Entrants will be expected to show a link between their strategies and the results of the marketing activity.</p>
+				<p>The Prize is free to enter and is open to clients and agencies in any marketing discipline.</p>
+				{% if d.open %}<p>The deadline for entries is 5pm GMT {{ d.deadline }} {{ d.year }}.</p>{% endif %}
+			</div>
+			<div class="col-md-6">
+				<!-- <p>{{ d.body_copy2 }}</p> -->
+				<p class="text-bigger"><strong>Prize structure</strong></p>
+				<p>The Prize will follow a Grand Prix / Gold / Silver / Bronze system. The jury will also nominate winners of the Special Awards that recognise specific areas of excellence.</p>
+				{% for awd, bio in d.special_awards.items() %}
+				<h5 class="mb-0">{{ awd }}</h5>
+				<p>{{ bio }}</p>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>
