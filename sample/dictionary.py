@@ -14,6 +14,7 @@ AWARDS = {
         'previous': 'category',
         'entry_details': 5707,
         'insights': 6692,
+        'img_content_code': 'warc-prize-asia',
         'categories': {
             'asia': {
                 'award': 'asia',
@@ -66,6 +67,7 @@ AWARDS = {
         'previous': 'category',
         'entry_details': 6671,
         'insights': 6672,
+        'img_content_code': 'warc-awards-media',
         'categories': {
             'channel': {
                 'award': 'media',
@@ -224,6 +226,7 @@ AWARDS = {
         'previous': 'category',
         'entry_details': 5639,
         'insights': 6690,
+        'img_content_code': 'warc-prize-mena',
         'categories': {
             'mena': {
                 'award':
@@ -328,6 +331,7 @@ AWARDS = {
         'previous': 'category',
         'entry_details': 6740,
         'insights': 6741,
+        'img_content_code': 'warc-awards-effectiveness',
         'categories': {
             'experience': {
                 'award':
