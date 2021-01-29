@@ -1,5 +1,23 @@
-{% extends "preview.html" %}
-{% block content %}
 <!-- PREVIOUS -->
-<h3>{{ page.title().replace('_',' ') }}</h3>
-{% endblock %}
+<section class="section-default bg-primary1">
+	<div class="container-fluid">
+		<h3>Previous winners</h3>
+	</div>
+	<div class="container-fluid margin-t-medium">
+		<div class="row justify-content-lg-between margin-b-medium">
+			<div class="col-sm-6 col-lg-5 intro-image order-lg-2">
+				{% set year = d.year|int - 1 -%}
+				{% set grandprix = d.papers[0] -%}
+				<img src="https://cdn.warc.com/Images/WARCSiteContent/content/{{ d.img_content_code }}/{{ grandprix.ID }}.jpg" alt="{{ grandprix.Title }}">
+			</div>
+			<div class="col-lg-6 order-lg-1">
+				<p>There were {{ d.winners_ids|count }} winning case studies in the {{ year }} competition, with <a href="https://www.warc.com{{ grandprix.Link }}">{{ grandprix.Brand }}: {{ grandprix.Title }}</a>, through {{ grandprix.Lead }}, taking the Grand Prix.</p>
+				<p>{{ grandprix.Summary1 }}</p>
+				<p>{{ grandprix.Summary3 }}</p>
+				<div class="containing-box-links">
+					<a class="box-links" href="https://www.warc.com/Search/Award/{{ d.cartridge }}/{{ d.winners_ids|join(',') }}">Browse the winners of the {{ year }} awards</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
