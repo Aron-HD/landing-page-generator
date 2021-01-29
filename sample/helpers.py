@@ -13,9 +13,7 @@ class Functions:
         '''To get launch page codes or cartridge code.'''
         replacements = [
             'preview-',
-            '_bios',
             '_split',
-            # '_headshots', # div within element
             'category_',
             'award_'
         ]
