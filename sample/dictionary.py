@@ -1,4 +1,4 @@
-AWARDS = {
+{
     'asia': {
         'lp': 224,
         'title': 'WARC Prize for Asian Strategy',
@@ -17,38 +17,90 @@ AWARDS = {
         'img_content_code': 'warc-prize-asia',
         'categories': {
             'asia': {
-                'award': 'asia',
-                'lp': 224,
-                'title': 'WARC Prize for Asian Strategy',
-                'url': 'awards/warc-prize-for-asian-strategy',
-                'category': 'asia',
-                'report': 'Asian Strategy Report',
-                'abbreviation': '',
-                'full_category': '',
-                'category_href': '/asiaprize/2020judges',
-                'hero': 5692,
-                'body': 6691,
-                'winners': 6691,
-                'shortlist': 6691,
-                'judges': 5708,
-                'special': 0,
-                'previous': 5710,
-                'judges_bios': 5711,
-                'judges_lp': 1,
-                'judges_title': 'WARC Prize for Asian Strategy - 2020 Judges',
-                'judges_url': '/asiaprize/2020judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'award':
+                'asia',
+                'lp':
+                224,
+                'title':
+                'WARC Prize for Asian Strategy',
+                'url':
+                'awards/warc-prize-for-asian-strategy',
+                'category':
+                'asia',
+                'report':
+                'Asian Strategy Report',
+                'abbreviation':
+                '',
+                'full_category':
+                '',
+                'category_href':
+                '/asiaprize/2020judges',
+                'hero':
+                5692,
+                'body':
+                6691,
+                'winners':
+                6691,
+                'shortlist':
+                6691,
+                'judges':
+                5708,
+                'special':
+                6807,
+                'previous':
+                5710,
+                'judges_bios':
+                5711,
+                'judges_lp':
+                1,
+                'judges_title':
+                'WARC Prize for Asian Strategy - 2020 Judges',
+                'judges_url':
+                '/asiaprize/2020judges',
+                'spec_award1':
+                'The Category Disruptor Award',
+                'spec_bio1':
+                'For the best example of a brand that has successfully broken with category conventions.',
+                'spec_award2':
+                'The Early Adopter Award',
+                'spec_bio2':
+                'For the best example of a brand using a new innovation or emerging tech or platform.',
+                'spec_award3':
+                'The Long-Term Strategy Award',
+                'spec_bio3':
+                'The best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                'spec_award4':
+                'The Customer Journey Award',
+                'spec_bio4':
+                'For the best example of a brand creating a compelling path to purchase.',
+                'spec_award5':
+                'The Research Excellence Award',
+                'spec_bio5':
+                'For the best use of research in the development of strategic ideas.',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'The Category Disruptor Award':
+                    'For the best example of a brand that has successfully broken with category conventions.',
+                    'The Early Adopter Award':
+                    'For the best example of a brand using a new innovation or emerging tech or platform.',
+                    'The Long-Term Strategy Award':
+                    'The best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                    'The Customer Journey Award':
+                    'For the best example of a brand creating a compelling path to purchase.',
+                    'The Research Excellence Award':
+                    'For the best use of research in the development of strategic ideas.'
+                },
+                'The Category Disruptor Award':
+                'For the best example of a brand that has successfully broken with category conventions.',
+                'The Early Adopter Award':
+                'For the best example of a brand using a new innovation or emerging tech or platform.',
+                'The Long-Term Strategy Award':
+                'The best strategy designed to build a long-term brand platform, executed over a period of three years or more.',
+                'The Customer Journey Award':
+                'For the best example of a brand creating a compelling path to purchase.',
+                'The Research Excellence Award':
+                'For the best use of research in the development of strategic ideas.'
             }
         }
     },
@@ -70,144 +122,316 @@ AWARDS = {
         'img_content_code': 'warc-awards-media',
         'categories': {
             'channel': {
-                'award': 'media',
-                'lp': 255,
-                'title': 'WARC Media Awards - Effective Channel Integration',
-                'url': '',
-                'category': 'channel-integration',
-                'report': 'Media Strategy Report',
-                'abbreviation': 'int',
-                'full_category': 'Effective Channel Integration',
-                'category_href': '',
-                'hero': 6673,
-                'body': 4750,
-                'winners': 4750,
-                'shortlist': 4750,
-                'judges': 6674,
-                'special': 6675,
-                'previous': 6676,
-                'judges_bios': 5748,
-                'judges_lp': 2,
+                'award':
+                'media',
+                'lp':
+                255,
+                'title':
+                'WARC Media Awards - Effective Channel Integration',
+                'url':
+                '',
+                'category':
+                'channel-integration',
+                'report':
+                'Media Strategy Report',
+                'abbreviation':
+                'int',
+                'full_category':
+                'Effective Channel Integration',
+                'category_href':
+                '',
+                'hero':
+                6673,
+                'body':
+                4750,
+                'winners':
+                4750,
+                'shortlist':
+                4750,
+                'judges':
+                6674,
+                'special':
+                6675,
+                'previous':
+                6676,
+                'judges_bios':
+                5748,
+                'judges_lp':
+                2,
                 'judges_title':
                 'WARC Media Awards - 2020 Channel Integration Judges',
-                'judges_url': '/mediaawards/channel-integration-judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'judges_url':
+                '/mediaawards/channel-integration-judges',
+                'spec_award1':
+                'Path-to-Purchase Award',
+                'spec_bio1':
+                'How a campaign built an effective integration model around shopper or path-to-purchase insight',
+                'spec_award2':
+                'Effective Cross-Channel Measurement Award',
+                'spec_bio2':
+                'For a campaign that most accurately measured the effectiveness of different comms channels and the halo effect that they achieved together',
+                'spec_award3':
+                'The POE Award',
+                'spec_bio3':
+                'How a strategy successfully linked paid, owned and earned media',
+                'spec_award4':
+                '',
+                'spec_bio4':
+                '',
+                'spec_award5':
+                '',
+                'spec_bio5':
+                '',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'Path-to-Purchase Award':
+                    'How a campaign built an effective integration model around shopper or path-to-purchase insight',
+                    'Effective Cross-Channel Measurement Award':
+                    'For a campaign that most accurately measured the effectiveness of different comms channels and the halo effect that they achieved together',
+                    'The POE Award':
+                    'How a strategy successfully linked paid, owned and earned media'
+                },
+                'Path-to-Purchase Award':
+                'How a campaign built an effective integration model around shopper or path-to-purchase insight',
+                'Effective Cross-Channel Measurement Award':
+                'For a campaign that most accurately measured the effectiveness of different comms channels and the halo effect that they achieved together',
+                'The POE Award':
+                'How a strategy successfully linked paid, owned and earned media'
             },
             'data': {
-                'award': 'media',
-                'lp': 258,
-                'title': 'WARC Media Awards - Best Use of Data',
-                'url': '',
-                'category': 'data',
-                'report': 'Media Strategy Report',
-                'abbreviation': 'dat',
-                'full_category': 'Best Use of Data',
-                'category_href': '',
-                'hero': 6685,
-                'body': 4754,
-                'winners': 4754,
-                'shortlist': 4754,
-                'judges': 6686,
-                'special': 6687,
-                'previous': 6688,
-                'judges_bios': 5750,
-                'judges_lp': 4,
-                'judges_title': 'WARC Media Awards - 2020 Use of Data Judges',
-                'judges_url': '/mediaawards/data-judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'award':
+                'media',
+                'lp':
+                258,
+                'title':
+                'WARC Media Awards - Best Use of Data',
+                'url':
+                '',
+                'category':
+                'data',
+                'report':
+                'Media Strategy Report',
+                'abbreviation':
+                'dat',
+                'full_category':
+                'Best Use of Data',
+                'category_href':
+                '',
+                'hero':
+                6685,
+                'body':
+                4754,
+                'winners':
+                4754,
+                'shortlist':
+                4754,
+                'judges':
+                6686,
+                'special':
+                6687,
+                'previous':
+                6688,
+                'judges_bios':
+                5750,
+                'judges_lp':
+                4,
+                'judges_title':
+                'WARC Media Awards - 2020 Use of Data Judges',
+                'judges_url':
+                '/mediaawards/data-judges',
+                'spec_award1':
+                'Personalisation Award',
+                'spec_bio1':
+                'For the best example of a campaign that used data to segment effectively',
+                'spec_award2':
+                'The Attribution Award',
+                'spec_bio2':
+                'For the best example of a channel attribution model',
+                'spec_award3':
+                'Data-Driven Insight Award',
+                'spec_bio3':
+                'For a campaign where data helped to identify the right audience at scale',
+                'spec_award4':
+                '',
+                'spec_bio4':
+                '',
+                'spec_award5':
+                '',
+                'spec_bio5':
+                '',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'Personalisation Award':
+                    'For the best example of a campaign that used data to segment effectively',
+                    'The Attribution Award':
+                    'For the best example of a channel attribution model',
+                    'Data-Driven Insight Award':
+                    'For a campaign where data helped to identify the right audience at scale'
+                },
+                'Personalisation Award':
+                'For the best example of a campaign that used data to segment effectively',
+                'The Attribution Award':
+                'For the best example of a channel attribution model',
+                'Data-Driven Insight Award':
+                'For a campaign where data helped to identify the right audience at scale'
             },
             'partnerships': {
-                'award': 'media',
-                'lp': 257,
+                'award':
+                'media',
+                'lp':
+                257,
                 'title':
                 'WARC Media Awards - Effective Use of Partnerships & Sponsorships',
-                'url': '',
-                'category': 'partnerships-sponsorships',
-                'report': 'Media Strategy Report',
-                'abbreviation': 'psp',
+                'url':
+                '',
+                'category':
+                'partnerships-sponsorships',
+                'report':
+                'Media Strategy Report',
+                'abbreviation':
+                'psp',
                 'full_category':
                 'Effective Use of Partnerships & Sponsorships',
-                'category_href': '',
-                'hero': 6681,
-                'body': 4755,
-                'winners': 4755,
-                'shortlist': 4755,
-                'judges': 6682,
-                'special': 6683,
-                'previous': 6684,
-                'judges_bios': 5751,
-                'judges_lp': 5,
+                'category_href':
+                '',
+                'hero':
+                6681,
+                'body':
+                4755,
+                'winners':
+                4755,
+                'shortlist':
+                4755,
+                'judges':
+                6682,
+                'special':
+                6683,
+                'previous':
+                6684,
+                'judges_bios':
+                5751,
+                'judges_lp':
+                5,
                 'judges_title':
                 'WARC Media Awards - 2020 Partnerships and Sponsorships Judges',
-                'judges_url': '/mediaawards/partnerships-sponsorships-judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'judges_url':
+                '/mediaawards/partnerships-sponsorships-judges',
+                'spec_award1':
+                'Successful Sponsorship Award',
+                'spec_bio1':
+                'For the best example of a brand effectively aligning itself with, for instance, an entertainment property or a sporting event',
+                'spec_award2':
+                'Effective Native Award',
+                'spec_bio2':
+                'For the best example of a native campaign that helped a brand meet its business objectives',
+                'spec_award3':
+                'Collaboration with an Influencer Award',
+                'spec_bio3':
+                'For the most effective partnership with an influencer appropriate for the target market',
+                'spec_award4':
+                '',
+                'spec_bio4':
+                '',
+                'spec_award5':
+                '',
+                'spec_bio5':
+                '',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'Successful Sponsorship Award':
+                    'For the best example of a brand effectively aligning itself with, for instance, an entertainment property or a sporting event',
+                    'Effective Native Award':
+                    'For the best example of a native campaign that helped a brand meet its business objectives',
+                    'Collaboration with an Influencer Award':
+                    'For the most effective partnership with an influencer appropriate for the target market'
+                },
+                'Successful Sponsorship Award':
+                'For the best example of a brand effectively aligning itself with, for instance, an entertainment property or a sporting event',
+                'Effective Native Award':
+                'For the best example of a native campaign that helped a brand meet its business objectives',
+                'Collaboration with an Influencer Award':
+                'For the most effective partnership with an influencer appropriate for the target market'
             },
             'tech': {
-                'award': 'media',
-                'lp': 256,
-                'title': 'WARC Media Awards - Effective Use of Tech',
-                'url': '',
-                'category': 'tech',
-                'report': 'Media Strategy Report',
-                'abbreviation': 'tec',
-                'full_category': 'Effective Use of Tech',
-                'category_href': '',
-                'hero': 6677,
-                'body': 4752,
-                'winners': 5752,
-                'shortlist': 5752,
-                'judges': 6678,
-                'special': 6679,
-                'previous': 6680,
-                'judges_bios': 5749,
-                'judges_lp': 6,
-                'judges_title': 'WARC Media Awards - 2020 Use of Tech Judges',
-                'judges_url': '/mediaawards/tech-judges',
-                'spec_award1': '',
-                'spec_bio1': '',
-                'spec_award2': '',
-                'spec_bio2': '',
-                'spec_award3': '',
-                'spec_bio3': '',
-                'spec_award4': '',
-                'spec_bio4': '',
-                'spec_award5': '',
-                'spec_bio5': '',
-                'body_copy': '',
-                'special_awards': {}
+                'award':
+                'media',
+                'lp':
+                256,
+                'title':
+                'WARC Media Awards - Effective Use of Tech',
+                'url':
+                '',
+                'category':
+                'tech',
+                'report':
+                'Media Strategy Report',
+                'abbreviation':
+                'tec',
+                'full_category':
+                'Effective Use of Tech',
+                'category_href':
+                '',
+                'hero':
+                6677,
+                'body':
+                4752,
+                'winners':
+                5752,
+                'shortlist':
+                5752,
+                'judges':
+                6678,
+                'special':
+                6679,
+                'previous':
+                6680,
+                'judges_bios':
+                5749,
+                'judges_lp':
+                6,
+                'judges_title':
+                'WARC Media Awards - 2020 Use of Tech Judges',
+                'judges_url':
+                '/mediaawards/tech-judges',
+                'spec_award1':
+                'Early Adopter Award',
+                'spec_bio1':
+                'How a brand successfully embraced a new platform',
+                'spec_award2':
+                'Most Scalable Idea Award',
+                'spec_bio2':
+                'For a tech-led idea with the scope to make an impact within its sector and, potentially, beyond',
+                'spec_award3':
+                'Platform Pioneer Award',
+                'spec_bio3':
+                'How a brand found an innovative and effective way to use an existing platform',
+                'spec_award4':
+                '',
+                'spec_bio4':
+                '',
+                'spec_award5':
+                '',
+                'spec_bio5':
+                '',
+                'body_copy':
+                '',
+                'special_awards': {
+                    'Early Adopter Award':
+                    'How a brand successfully embraced a new platform',
+                    'Most Scalable Idea Award':
+                    'For a tech-led idea with the scope to make an impact within its sector and, potentially, beyond',
+                    'Platform Pioneer Award':
+                    'How a brand found an innovative and effective way to use an existing platform'
+                },
+                'Early Adopter Award':
+                'How a brand successfully embraced a new platform',
+                'Most Scalable Idea Award':
+                'For a tech-led idea with the scope to make an impact within its sector and, potentially, beyond',
+                'Platform Pioneer Award':
+                'How a brand found an innovative and effective way to use an existing platform'
             }
         }
     },
@@ -258,7 +482,7 @@ AWARDS = {
                 'judges':
                 5640,
                 'special':
-                0,
+                6806,
                 'previous':
                 5641,
                 'judges_bios':
@@ -367,13 +591,13 @@ AWARDS = {
                 'previous':
                 6749,
                 'judges_bios':
-                0,
+                6799,
                 'judges_lp':
-                0,
+                275,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Customer Experience Judges',
                 'judges_url':
-                '',
+                'effectivenessawards/customer-experience-judges',
                 'spec_award1':
                 'Best Use of Tech',
                 'spec_bio1':
@@ -445,13 +669,13 @@ AWARDS = {
                 'previous':
                 6755,
                 'judges_bios':
-                0,
+                6794,
                 'judges_lp':
-                0,
+                276,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Collaboration and Culture Judges',
                 'judges_url':
-                '',
+                'effectivenessawards/collaboration-culture-judges',
                 'spec_award1':
                 'The Culture-Creator Award',
                 'spec_bio1':
@@ -523,13 +747,13 @@ AWARDS = {
                 'previous':
                 6760,
                 'judges_bios':
-                0,
+                6802,
                 'judges_lp':
-                0,
+                280,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Sustained Growth Judges',
                 'judges_url':
-                '',
+                'effectivenessawards/sustained-growth-judges',
                 'spec_award1':
                 'Reinvention Award',
                 'spec_bio1':
@@ -601,13 +825,13 @@ AWARDS = {
                 'previous':
                 6765,
                 'judges_bios':
-                0,
+                6800,
                 'judges_lp':
-                0,
+                278,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Instant Impact Judges',
                 'judges_url':
-                '',
+                'effectivenessawards/instant-impact-judges',
                 'spec_award1':
                 'Creative Catalyst Award',
                 'spec_bio1':
@@ -679,13 +903,13 @@ AWARDS = {
                 'previous':
                 6770,
                 'judges_bios':
-                0,
+                6801,
                 'judges_lp':
-                0,
+                279,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Brand Purpose Judges',
                 'judges_url':
-                '',
+                '\teffectivenessawards/brand-purpose-judges',
                 'spec_award1':
                 'Sustainability Award',
                 'spec_bio1':
@@ -757,13 +981,13 @@ AWARDS = {
                 'previous':
                 6775,
                 'judges_bios':
-                0,
+                6798,
                 'judges_lp':
-                0,
+                277,
                 'judges_title':
-                '',
+                'Effectiveness Awards - Business to Business Judges',
                 'judges_url':
-                '',
+                'effectivenessawards/business-to-business-judges',
                 'spec_award1':
                 'Virtual Experience Award',
                 'spec_bio1':
