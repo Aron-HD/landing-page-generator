@@ -35,17 +35,24 @@ data = {}
 def get_csv(cat, page):  # swap page for path
     '''Reads in csv data for shortlist, winners or judges.'''
     log.debug('reading csv')
+    replacements = [
+        'preview-',
+        '_bios',
+        '_split',
+        '_headshots'
+    ]
     try:
-        pg = page.replace('preview-', '').replace('_bios', '') # strip other tags
+        for item in replacements:
+            page = page.replace(item, '')
         path = {  # pass in path object in respective functions when class
             'shortlist': f'../data/csv/shortlists/{cat}_shortlist.csv',
             'winners': f'../data/csv/{cat}_winners.csv',
             'judges': f'../data/csv/{cat}-judges.csv'
         }
-        df = pd.read_csv(path[pg])
+        df = pd.read_csv(path[page])
         return df.to_dict('records')
     except UnicodeError:
-        df = pd.read_csv(path[pg], encoding='cp1252')
+        df = pd.read_csv(path[page], encoding='cp1252')
         return df.to_dict('records')
     except KeyError:
         log.debug('no csv read')
@@ -53,10 +60,10 @@ def get_csv(cat, page):  # swap page for path
 
 
 def get_data(date, page, award, category):
-
+    '''Consolidates all data sources and returns single dict output for rendering templates.'''
     # init as class common ones have rest as functions
     # date = values['date']
-    award = values['award']
+    # award = values['award']
     # category = values['cat']
     # page = values['page']
     
@@ -92,17 +99,22 @@ def get_data(date, page, award, category):
     # if radio input is true then get_csv that thing
     # get_csv(cat, page) if value for value in values True else pass
     # so that only necessary info is added to dict
-    data.update({"papers": get_csv(category, page)})
-    
+    if any(i in page for i in ['winners', 'shortlist', 'previous']):
+        data.update({"papers": get_csv(category, page)})
+
     if 'judges' in page:
-        data.update({"judges": get_csv(category, page)})
+        data.update({
+            "judges": get_csv(category, page),
+            "url": AWARDS[award]['url'],
+            "category": AWARDS[award]['categories'][category]['category']
+        })
         print('Panel chair:\n', data['judges'][0]['Name'], data['judges'][0]['Surname'])
 
     if 'entry' in page:
         entry_form = AWARDS[award]['prize'] + data['year'] + '-entryform.docx'
         data.update({"entry_form": entry_form, "open": values['open']})
     
-    if 'entry' or 'about' in page:
+    if 'entry' in page or 'about' in page:
         deadline = input('Deadline for entries?: ')
         data.update({"deadline": deadline})
 
@@ -162,7 +174,7 @@ def main():
     award = values['award']
     written_assets = []
 
-    for page in values['page']:
+    for page in values['page']: # should update data once instead of every page
         for category in values['cat']:
             file, output, element = get_html(date, page, award, category)
             write_html(file, output)

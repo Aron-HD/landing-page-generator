@@ -11,7 +11,16 @@ class Functions:
 
     def awd_elmt(award, category, page):
         '''To get launch page codes or cartridge code.'''
-        page = page.replace('category_', '').replace('award_', '').replace('preview-', '')
+        replacements = [
+            'preview-',
+            '_bios',
+            '_split',
+            # '_headshots', # div within element
+            'category_',
+            'award_'
+        ]
+        for item in replacements:
+            page = page.replace(item, '')
         try:
             category = AWARDS[award]['categories'][category]
             if page in [k for k in category.keys()]:
@@ -22,6 +31,7 @@ class Functions:
                 return code
         except KeyError:
             log.error('page not found in awards dictionary keys:', page)
+            return 0
 
     def process_date(date):
         '''To process input date and current year.'''
