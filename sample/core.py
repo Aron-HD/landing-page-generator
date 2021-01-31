@@ -102,13 +102,24 @@ def get_data(date, page, award, category):
     # so that only necessary info is added to dict
     if any(i in page for i in ['winners', 'shortlist', 'previous']):
         papers = get_csv(category, page)
-        winning_ids = [
-            'A'+str(i['ID']) for i in papers if any(
-                [x in i['Award'].lower() for x in ['grand','gold','silver','bronze']]
-        )]
+
+        if page != 'shortlist':
+            medals = ['grand','gold','silver','bronze']
+            # could do this better with filter and ~filter
+            winning_ids = ['A'+str(i['ID']) for i in papers if any(
+                    [x in i['Award'].lower() for x in medals]
+                )]
+            shortlisted_ids = ['A'+str(i['ID']) for i in papers if any(
+                    [x not in i['Award'].lower() for x in medals]
+                )]
+            data.update({"winners_ids": winning_ids})
+        else:
+            winning_ids = None
+            shortlisted_ids = ['A'+str(i['ID']) for i in papers]
+
         data.update({
             "papers": papers,
-            "winners_ids": winning_ids,
+            "shortlist_ids": shortlisted_ids,
             "img_content_code": AWARDS[award]['img_content_code']
         })
 
@@ -147,22 +158,21 @@ def get_html(date, page, award, category):
     try:
         d = get_data(date, page, award, category)
         yr = d['year']
-        elmt = func.awd_elmt(
+        elmt = func.awd_elmt( # page element
             page=page,
             award=award,
             category=category
         )
         # bring these functions into class
-        fn = func.save_name(page, award, category, yr, elmt)
-
-        # tpl.render
-        out = env.get_template(f'{page}.html').render(d=d, page=page)
-        return fn, out, elmt
+        fn = func.save_name(page, award, category, yr, elmt) # filename
+        output = env.get_template(f'{page}.html').render(d=d, page=page)
+        return fn, output, elmt
     except Exception as e:
         raise e
 
 
 def update_page(assets):
+    '''Updates cms page element with created html content using the cmsbot package.'''
     log.info('\nselected write files to CMS...')
     from cmsbot.cmsbot import CMSBot  # import here so only if selected?
     try:
@@ -171,7 +181,7 @@ def update_page(assets):
             log.info("- updating ->", name)
             cms.edit_page(page_element)
             cms.paste_content(content)
-            cms.save_changes()
+            # cms.save_changes()
         log.info('# updates complete')
 
     except Exception as e:
