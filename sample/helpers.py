@@ -14,6 +14,7 @@ class Functions:
         replacements = [
             'preview-',
             '_split',
+            '_headshots',
             'category_',
             'award_'
         ]
@@ -28,7 +29,7 @@ class Functions:
                 code = AWARDS[award][page]
                 return code
         except KeyError:
-            log.error('page not found in awards dictionary keys:', page)
+            log.debug('page not found in awards dictionary keys:', page)
             return 0
 
     def process_date(date):

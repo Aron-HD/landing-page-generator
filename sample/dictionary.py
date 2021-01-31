@@ -1,4 +1,4 @@
-{
+AWARDS = {
     'asia': {
         'lp': 224,
         'title': 'WARC Prize for Asian Strategy',
