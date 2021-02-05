@@ -11,6 +11,8 @@ from jinja2 import Environment, FileSystemLoader
 env = Environment(
     loader=FileSystemLoader('../templates'))
 
+log.basicConfig(filename='log.log', level=log.DEBUG)
+
 # CLI / GUI Inputs
 values = {}
 try:
@@ -25,7 +27,7 @@ try:
     values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
     values['report_image'] = '../winner-2020.jpg'
 except KeyError as e:
-    print('invalid key input lists separated by spaces', e)
+    log.warning('invalid key input lists separated by spaces', e)
     raise SystemExit
 
 # init as class
@@ -130,7 +132,7 @@ def get_data(date, page, award, category):
             "category": AWARDS[award]['categories'][category]['category'],
             "category_href": AWARDS[award]['categories'][category]['category_href']
         })
-        print('Panel chair:\n', data['judges'][0]['Name'], data['judges'][0]['Surname'])
+        print('\nPanel chair:', data['judges'][0]['Name'], data['judges'][0]['Surname'])
 
     if 'judges_split' in page:
         data.update({"quote": input('Insert quote:\n')})
@@ -149,7 +151,6 @@ def get_data(date, page, award, category):
 def write_html(filename, output):
     with open(filename, "w") as f:
         f.write(output)
-    print("Wrote -->", filename)
 
 
 # make this a class LandingPage: that imports from package /template_data with helpers in too
@@ -166,26 +167,30 @@ def get_html(date, page, award, category):
         # bring these functions into class
         fn = func.save_name(page, award, category, yr, elmt) # filename
         output = env.get_template(f'{page}.html').render(d=d, page=page)
-        return fn, output, elmt
-    except Exception as e:
-        raise e
+    except TypeError as e:
+        print('error while rendering template, check logs')
+        log.error(e)
+        output = False
+    return fn, output, elmt
 
 
 def update_page(assets):
     '''Updates cms page element with created html content using the cmsbot package.'''
-    log.info('\nselected write files to CMS...')
+    log.debug('\nselected write files to CMS...')
     from cmsbot.cmsbot import CMSBot  # import here so only if selected?
     try:
         cms = CMSBot()
+        print("\nupdating pages in cms...\n" )
         for name, page_element, content in assets:
-            log.info("- updating ->", name)
+            print(name)
             cms.edit_page(page_element)
             cms.paste_content(content)
             cms.save_changes()
-        log.info('# updates complete')
+        print('\n# updates complete')
 
     except Exception as e:
-        raise e
+        log.error(e)
+        print('Error while running cmsbot, check logs')
     finally:
         cms.bot.quit()
 
@@ -197,32 +202,25 @@ def main():
     date = values['date']
     award = values['award']
     written_assets = []
-
+    print("Writing files:\n")
     for page in values['page']: # should update data once instead of every page
         for category in values['cat']:
             file, output, element = get_html(date, page, award, category)
-            write_html(file, output)
             fname = Path(file).name
-            written_assets.append((fname, element, output))
+            if output:
+                write_html(file, output)
+                print(fname)
+                written_assets.append((fname, element, output))
+            else:
+                print(f'# failed --> {fname}')
 
-    # log.info("\nfiles written:\n")
-    # [log.info(f) for f, e, o in written_assets]
-    string = f"\nupdate CMS articles with each file's content?\n\t- select 'Y' or 'N': "
+    string = f"\nupdate CMS articles with file content?\n- select 'y' or 'n': "
     select = input(string).casefold()
 
     if select != 'y':
         return False
     else:
         update_page(written_assets)
-
-# def main1():
-
-# 	for f in glob(r"../templates/*.html"):
-# 		log.info(f)
-# 		for line in f:
-# 			tag = line.find(r'{{')
-# 			log.info(tag)
-
 
 if __name__ == '__main__':
     main()
