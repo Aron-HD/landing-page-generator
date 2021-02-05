@@ -1,7 +1,7 @@
 <!-- JUDGES BIOS -->
 <section class="section-title-text">
   <div class="container-fluid nested">
-    <h1>{{ d.full_category }}: {{ d.year }} Judges</h1>
+    <h1>{{ d.full_award }}: {{ d.year }} {{ d.full_category }} Judges</h1>
   </div>
 </section>
 
@@ -55,6 +55,6 @@
 {%- if 'mena' in d.award or 'asia' in d.award %}
   <p><a href="{{ d.url }}" class="link-backwards">Back to the {{ d.full_award }} page</a></p>
 {%- else %}
-  <p><a href="{{ d.url }}/{{ d.category }}" class="link-backwards">Back to the {{ d.full_category }} page</a></p>
+  <p><a href="{{ d.url }}/{{ d.category }}" class="link-backwards">Back to the {{ d.full_award }}: {{ d.full_category }} page</a></p>
 {% endif -%}
 </div>
