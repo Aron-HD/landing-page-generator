@@ -575,7 +575,7 @@ AWARDS = {
                 'full_category':
                 'Customer Experience',
                 'category_href':
-                '?awards/effectiveness/customer-experience-judges',
+                'effectivenessawards/customer-experience-judges',
                 'hero':
                 6743,
                 'body':
@@ -653,7 +653,7 @@ AWARDS = {
                 'full_category':
                 'Collaboration & Culture',
                 'category_href':
-                '?awards/effectiveness/collaboration-culture-judges',
+                'effectivenessawards/collaboration-culture-judges',
                 'hero':
                 6751,
                 'body':
@@ -731,7 +731,7 @@ AWARDS = {
                 'full_category':
                 'Sustained Growth',
                 'category_href':
-                '?awards/effectiveness/sustained-growth-judges',
+                'effectivenessawards/sustained-growth-judges',
                 'hero':
                 6756,
                 'body':
@@ -809,7 +809,7 @@ AWARDS = {
                 'full_category':
                 'Instant Impact',
                 'category_href':
-                '?awards/effectiveness/instant-impact-judges',
+                'effectivenessawards/instant-impact-judges',
                 'hero':
                 6761,
                 'body':
@@ -887,7 +887,7 @@ AWARDS = {
                 'full_category':
                 'Brand Purpose',
                 'category_href':
-                '?awards/effectiveness/brand-purpose-judges',
+                'effectivenessawards/brand-purpose-judges',
                 'hero':
                 6766,
                 'body':
@@ -965,7 +965,7 @@ AWARDS = {
                 'full_category':
                 'Business-to-Business',
                 'category_href':
-                '?awards/effectiveness/business-to-business-judges',
+                'effectivenessawards/business-to-business-judges',
                 'hero':
                 6771,
                 'body':
