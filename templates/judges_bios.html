@@ -11,11 +11,12 @@
     {% set cname = chair.Name + ' ' + chair.Surname -%}
     {% for j in d.judges -%}
     {% set jname = j.Name + ' ' + j.Surname -%}
+    {% set jimage = jname.lower().replace("'",'-').replace(' ', '-') -%}
     {% set jtitle = j.Title + ', ' + j.Company -%}
     {%- if j.Bio|length > 5 %}
     
     <!-- {{ jname }} -->
-    <div class="tile" id="{{ jname.lower().replace(' ', '-') }}">
+    <div class="tile" id="{{ jimage }}">
       <div class="person-main">
         <div class="person-name">
           <h4>{{ jname }}</h4>
@@ -32,7 +33,7 @@
         </div>
       </div>
       <div class="person-image">
-        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jimage }}.jpg" alt="{{ jname }}">
       </div>
     </div>
     {%- endif %}

@@ -4,10 +4,11 @@
 		{%- for j in d.judges %}
 		{%- set jname = j.Name + ' ' + j.Surname %}
 		{%- set jtitle = j.Title + ', ' + j.Company %}
+		{%- set jimage = jname.lower().replace("'",'-').replace(' ', '-') %}
 		{%- if j.Bio|length > 5 %}
 			<!-- {{ jname }} -->
-		    <a class="tile" href="https://www.warc.com/{{ d.category_href }}#{{ jname.lower().replace(' ', '-') }}">
-		        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jname.lower().replace(' ', '-') }}.jpg" alt="{{ jname }}">
+		    <a class="tile" href="https://www.warc.com/{{ d.category_href }}#{{ jimage }}">
+		        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jimage }}.jpg" alt="{{ jname }}">
 		    </a>
 		{% endif -%}{% endfor -%}{% endif -%}
 		</div>
