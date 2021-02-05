@@ -11,7 +11,7 @@
     {% set cname = chair.Name + ' ' + chair.Surname -%}
     {% for j in d.judges -%}
     {% set jname = j.Name + ' ' + j.Surname -%}
-    {% set jimage = jname.lower().replace("'",'-').replace(' ', '-') -%}
+    {% set jimage = jname.lower().replace("'",'-').replace(' ', '-').replace('’','-').replace('ü','u') -%}
     {% set jtitle = j.Title + ', ' + j.Company -%}
     {%- if j.Bio|length > 5 %}
     

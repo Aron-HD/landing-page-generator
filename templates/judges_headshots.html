@@ -4,7 +4,7 @@
 		{%- for j in d.judges %}
 		{%- set jname = j.Name + ' ' + j.Surname %}
 		{%- set jtitle = j.Title + ', ' + j.Company %}
-		{%- set jimage = jname.lower().replace("'",'-').replace(' ', '-') %}
+		{%- set jimage = jname.lower().replace("'",'-').replace(' ', '-').replace('’','-').replace('ü','u') %}
 		{%- if j.Bio|length > 5 %}
 			<!-- {{ jname }} -->
 		    <a class="tile" href="https://www.warc.com/{{ d.category_href }}#{{ jimage }}">
