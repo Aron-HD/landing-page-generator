@@ -181,7 +181,7 @@ def update_page(assets):
             log.info("- updating ->", name)
             cms.edit_page(page_element)
             cms.paste_content(content)
-            # cms.save_changes()
+            cms.save_changes()
         log.info('# updates complete')
 
     except Exception as e:
