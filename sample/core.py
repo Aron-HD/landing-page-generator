@@ -54,10 +54,12 @@ def get_csv(cat, page):  # swap page for path
         }
         df = pd.read_csv(path[page])
         return df.to_dict('records')
-    except UnicodeError:
+    except UnicodeError as e:
+        log.warning(e)
         df = pd.read_csv(path[page], encoding='cp1252')
         return df.to_dict('records')
-    except KeyError:
+    except KeyError as e:
+        log.warning(e)
         log.debug('no csv read')
         return False
 
@@ -198,11 +200,12 @@ def update_page(assets):
 
 
 def main():
-
+    '''Write an html page element for each input with option to upload this to cms.'''
     date = values['date']
     award = values['award']
     written_assets = []
     print("Writing files:\n")
+
     for page in values['page']: # should update data once instead of every page
         for category in values['cat']:
             file, output, element = get_html(date, page, award, category)
@@ -213,14 +216,21 @@ def main():
                 written_assets.append((fname, element, output))
             else:
                 print(f'# failed --> {fname}')
-
+    
+    # write a file containing all output from written_assets
+    proof_html_content = '\n'.join([i[2] for i in written_assets])
+    write_html('../static/html/proof-html.html', proof_html_content)
+    print('\n# wrote proof html file in /static/html')
+    
+    # prompt user whether to upload content
     string = f"\nupdate CMS articles with file content?\n- select 'y' or 'n': "
     select = input(string).casefold()
-
-    if select != 'y':
-        return False
-    else:
+    
+    # upload to cms using cmsbot class if confirmed
+    if select == 'y':
         update_page(written_assets)
+    else:
+        pass
 
 if __name__ == '__main__':
     main()
