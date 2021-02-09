@@ -1,27 +1,22 @@
-# LANDING PAGES
+# Landing page generator
 
-### About
+Automated creation of formulaic HTML static pages for internal Awards landing pages of [WARC.com](https://www.warc.com/), judging panels across all 12 of our awards categories throughout the year.
 
-**This is one of the first scripts I made, and I would do it completely differently now. However this works fine and serves the functional purpose, so rescripting it isn't currently worth the time.**
+Currently uses pulls data from python dictionary (or json) in `/data` in combination with additional data pulled from csv files for judging panels and winning campaigns. This is then collated and rendered through templates using Jinja2 templatig engine.
 
-Automated creation of formulaic HTML static pages for Judging panels across all 10 of our awards categories. Previously a copy and paste job.
+Outputs html files for each page and for each category specified. You can see examples of these in the [Examples](#2-examples) section.
 
-Takes input from csv, panel chair must be at top.
+# Contents
 
-Outputs two html files: one for the judging panel grid with headshots, another for the judging bios. (These are hidden for confidentiality).
+1. [Redesign](#1-redesign) 
+2. [Examples](#2-examples) 
+3. [Templates](#3-templates) 
+4. [GUI Imports](#4-gui-Imports) 
+5. [Improvements](#5-improvements) 
 
-**Examples:**
+# 1. Redesign
 
-- [Grid](https://www.warc.com/WarcAwards.prize?tab=innovation)
-- [Bios](https://www.warc.com/WARCAwards/innovation-judges.info#jane-wakely)
-
-Recently added functionality to comment out judges who have not yet submitted their pics or bios, which was previously a bit tedious to either remove from the csv, or comment out manually.
-
----
-
-# Redesign
-
-Updating this to use Jinja2 module for templating rather than concatenating strings.
+Updated this to use Jinja2 module for templating rather than concatenating strings.
 
 ### ToDo
 
@@ -40,30 +35,55 @@ Updating this to use Jinja2 module for templating rather than concatenating stri
 - create docs in docs folder and add docstrings
 - add database instead of csv
 
-### Templates
+---
 
-##### Launch
+### 2. Examples
 
-- insights and inspirations (others extend from this)
+##### [Grid](https://www.warc.com/awards/warc-prize-for-mena-strategy)
 
-d.report_link - *the full article link (e.g. "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"), which needs taking as input and updating to dictionary that is fed into render.*
+![Judges Pics & Testimonial Split](./static/img/judges-pics-split.png "Judges Pics & Testimonial Split")
 
-d.report - *the full report name (e.g. 'Asian Strategy Report'*
+##### [Bios](https://www.warc.com/effectivenessawards/sustained-growth-judges)
 
-d.page - *the type of page being made, "about", "entry_details", "previous" - Not 100% sure this TrackEvent changes though*
+![Judges Bios](./static/img/judges-bios.png "Judges Bios")
 
-d.award - *might need category for category reports in global awards*
+### 3. Templates
 
-d.year - *current year*
+##### Data inputs
 
-d.entry_kit - *just the file name of the pdf (maybe strip '.pdf' so it doesn't matter if ext is in name)*
+Data| Explanation
+--- | ---
+d.open | `True` or `False` to indicate whether the award is open for entries or not
+d.award | indicates which award we are working in 'effectiveness', 'mena', 'asia', 'media'
+d.cat | which category within each award - can input multiple by separating with spaces
+d.year | current year
+d.page | the type of page being made to correspond to template, 'about', 'entry_details', 'previous' - can input multiple by separating with spaces
+d.code | lower case of shortened award for urls
+d.cartridge | a 4 digit number used in search terms to filter articles tagged to the repective award
+d.entry_kit | just the file name of the entry kit uploaded to CMS
+d.report | the full report name (e.g. 'Asian Strategy Report'
+d.report_link | the full article link on warc.com (e.g. '/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538').
+d.full_award | for item title and description
+d.special_awards | the special awards for that award or category (usually 3 - 5)
+d.full_category | the correct full title of the category or award
+d.category_description | description of the category or award
+d.report_image | the image used for the report hosted in the CMS (usually same as that year's Grand Prix winner)
+d.body_copy | main body text of the category section (could be a list split on lines so can have p tags for each, or have in separate txt files to edit easily)
+d.winners_ids | the 6 digit article id numbers for each winning case study of that award or category from winners csv
+d.papers | a nested dictionary containing the metadata for the winning / shortlisted papers for that award or category from respective csv, includes: award won, title, brand, brand owner, lead agency(ies), contributing agency(ies), budget, campaign duration, markets, industries and media channels
+d.shortlist_ids | the 6 digit article id numbers for each shortlisted case study of that award or category from shortlist csv
+d.img_content_code | the code for content in the award content folders of our CMS
+d.judges | a nested dictionary containing metadata from judges csv, including judges name, surname, title and company
+d.url | the url for the main award or category landing page
+d.category | category or award code 
+d.category_href | the url for the judges bios landing page for that award
+d.quote | quote for the testimonial section, usually for judges-split section or about-split section
+d.entry_form | the entry form document uploaded to the CMS
+d.deadline | the deadline for entries format (d/ Month)
 
-d.full_award - *for item title and description*
+### 4. GUI Inputs
 
-
-- entry details
-
-**Links:**
+##### Links
 
 - **Reports**
     - "social": "/content/article/2020-social-strategy-report-insights-from-the-warc-awards/133117",
@@ -84,102 +104,17 @@ d.full_award - *for item title and description*
     - AsiaPrize-entryform2020.docx
     - mediaawards-entryform2020.docx
 
-- about
+### 5. Improvements
 
-Seperate extended templates for about will probably be needed.
+- need to add in sorting alphabetically on last name so that this doesn't have to be filtered in google sheets before export.
+- I could also add functionality to CMS-Bot repo to automatically upload resized images into the file admin in CMS *before* the script runs, so that images are definitely uploaded.
+- currently working on an easier way to take the bios from the All_judges.docx and place them directly into the csv. Might have to use pandas for this.
+- eventually I want to connect to google sheets itself through the API, rather than using a csv to cut out another stage of the process.
+
+##### about template
 
 Use num2words module to count award year from start date and convert to word.
 
 2020 was:
 fifth year of Media
 tenth year of Asia
-
-- previous
-
-##### Panels
-
-- judges pics
-- judges bios
-
-##### Winners
-
-These will be taken out of the landing page tabs when not relevant to keep judges separate.
-
-- winners
-- shortist
-
-
-### Landing page codes
-
-##### WARC Awards
-
-- 5645 - About (Intro)
-- 5902 - Previous
-- 5665 - Entry details
-- **Innovation** 
-    - 5901 - bios
-    - 5900 - pics
-- **Purpose**
-    - 5668 - bios
-    - 5648 - pics
-- **Content**
-    - 5646 - bios
-    - 5666 - pics
-- **Social**
-    - 5647 - bios
-    - 5667 - pics
-
-##### MENA
-
-- 5638 - About (Intro)
-- 5641 - Previous
-- 5639 - Entry details
-- 5642 bios
-- 5640 pics
-
-##### Asia
-
-- 5694 - About (Intro)
-- 5710 - Previous
-- 5707 - Entry Details
-- 5711 bios
-- 5708 pics
-
-##### Media Awards
-
-- 5743 - About (Intro)
-- 5752 - Previous
-- 5744 - Entry details
-- **Data**
-    - 5750 bios
-    - 5741 pics
-- **Channel Integration**
-    - 5748 bios
-    - 5739 pics
-- **Tech**
-    - 5749 bios
-    - 5740 pics
-- **Partnerships**
-    - 5751 bios
-    - 5742 pics
-
-##### China Prize
-- 6593 - header 
-
-##### Awards cartridge codes
-- WARC - 5790
-- MENA - 5822
-- Asia - 5676
-- Media - 5758
-
-##### Navigation
-- 91 - Our awards
-
-### Improvements
-
-- need to add in sorting alphabetically on last name so that this doesn't have to be filtered in google sheets before export.
-- all of the imports from LP_functions.py should just be in a dictionary or a JSON file. When I do get around to revising this.
-- I could also add functionality to CMS-Bot repo to automatically upload resized images into the file admin in CMS *before* the script runs, so that images are definitely uploaded.
-- currently working on an easier way to take the bios from the All_judges.docx and place them directly into the csv. Might have to use pandas for this.
-- eventually I want to connect to google sheets itself through the API, rather than using a csv to cut out another stage of the process.
-
