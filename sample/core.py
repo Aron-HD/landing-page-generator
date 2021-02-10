@@ -186,13 +186,19 @@ def update_page(assets):
         for name, page_element, content in assets:
             print(name)
             cms.edit_page(page_element)
-            cms.paste_content(content)
-            cms.save_changes()
+            cms.paste_content(content.replace('\t', '   '))#.replace('\n', '\\n'))
+            if input("save changes? 'y' or 'n' - ") == 'y':
+                cms.save_changes()
+                print('saved')
+            else:
+                print('did not save')
+                
         print('\n# updates complete')
 
     except Exception as e:
         log.error(e)
         print('Error while running cmsbot, check logs')
+        raise e
     finally:
         cms.bot.quit()
 
