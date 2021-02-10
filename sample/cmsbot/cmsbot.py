@@ -1,13 +1,13 @@
-import time
+import time, base64
 import logging as log  # urllib.request,
 from pathlib import Path
 from selenium import webdriver
-# from selenium.webdriver.common.by import By
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
-# from selenium.webdriver.support.ui import WebDriverWait
-from selenium.common.exceptions import NoSuchElementException
-# from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import NoSuchElementException, JavascriptException
+from selenium.webdriver.support import expected_conditions as EC
 # from selenium.webdriver.common.action_chains import ActionChains
 chrome_options = Options()
 chrome_options.add_argument(
@@ -42,10 +42,24 @@ class CMSBot:
             source_code = bot.find_element_by_id(
                 'HtmlContent-Editor-en-GB-Global-source-code')
             source_code.click()
-            html = bot.find_element_by_id('source-code-textarea')
+            # check if source code area is visible
+            html = WebDriverWait(bot, 10).until(
+                EC.visibility_of_element_located((By.ID, "source-code-textarea")))
+            # bot.find_element_by_id('source-code-textarea')
             html.click()
             html.clear()
-            html.send_keys(content.replace('\t', '  '))  # do this in file
+            time.sleep(1)
+            try:
+                # paste using javascript selector instead of send keys
+                # html_bs64 = base64.b64encode(content.encode('utf-8'))
+                # html_content = bot.get(f"data:text/html;charset=utf-8,{content}")
+                con = content.replace('\n','\\n')
+                bot.execute_script(f"document.getElementById('source-code-textarea').value = '{con}' ;")
+            except JavascriptException as e:
+                log.error(e)
+                raise e
+                # html.send_keys(content)
+            time.sleep(1)
             # input('Happy to save changes? press any key.')
         except NoSuchElementException as e:
             log.error('Could not find element', e)
