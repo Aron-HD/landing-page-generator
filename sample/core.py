@@ -3,6 +3,7 @@ import logging as log  # time # comment this once get_csv moved?
 from glob import glob
 from pathlib import Path
 
+from frontend.gui import return_values
 from dictionary import AWARDS
 from helpers import Functions as func
 
@@ -13,26 +14,15 @@ env = Environment(
 
 log.basicConfig(filename='log.log', level=log.DEBUG)
 
-# CLI / GUI Inputs
-values = {}
+# get values from gui
 try:
-    values['date'] = '01/01/2021'
-    values['page'] = list(
-        input("enter page ('special' 'body' 'category_hero'): ").strip().split(' '))
-    values['open'] = True # effects whether to display registration, deadline, entry links
-    values['award'] = input('award: ')
-    # make this able to pass in a list of cats too
-    values['cat'] = list(input("enter category: ").strip().split(' '))
-    values['entry_kit'] = "MENAPrize2021-entrykit.pdf"
-    values['report_link'] = "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904"
-    values['report_image'] = '../winner-2020.jpg'
+    values = return_values()
 except KeyError as e:
     log.warning('invalid key input lists separated by spaces', e)
     raise SystemExit
 
 # init as class
 data = {}
-
 
 def get_csv(cat, page):  # swap page for path
     '''Reads in csv data for shortlist, winners or judges.'''
@@ -158,16 +148,16 @@ def write_html(filename, output):
 # make this a class LandingPage: that imports from package /template_data with helpers in too
 def get_html(date, page, award, category):
     '''Returns a filename, its output content and its page element code.'''
+    d = get_data(date, page, award, category)
+    yr = d['year']
+    elmt = func.awd_elmt( # page element
+        page=page,
+        award=award,
+        category=category
+    )
+    # bring these functions into class
+    fn = func.save_name(page, award, category, yr, elmt) # filename
     try:
-        d = get_data(date, page, award, category)
-        yr = d['year']
-        elmt = func.awd_elmt( # page element
-            page=page,
-            award=award,
-            category=category
-        )
-        # bring these functions into class
-        fn = func.save_name(page, award, category, yr, elmt) # filename
         output = env.get_template(f'{page}.html').render(d=d, page=page)
     except TypeError as e:
         print('error while rendering template, check logs')
