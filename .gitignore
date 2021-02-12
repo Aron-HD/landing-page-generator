@@ -4,8 +4,8 @@ sample/frontend/
 
 # individual files
 sandbox.py
-sample/dictionary.py
-data/dictionary.json
+/sample/dictionary.py
+/data/dictionary.json
 
 # file types
 *.jpg
