@@ -542,10 +542,10 @@ AWARDS = {
     },
     'effectiveness': {
         'lp': 263,
-        'title': 'WARC Effectiveness Awards',
+        'title': 'WARC Awards for Effectiveness',
         'url': 'awards/effectiveness',
         'award': 'effectiveness',
-        'full_award': 'WARC Effectiveness Awards',
+        'full_award': 'WARC Awards for Effectiveness',
         'code': 'effectiveness',
         'prize': 'effectiveness',
         'awards_or_prize': 'Awards',
@@ -563,7 +563,7 @@ AWARDS = {
                 'lp':
                 264,
                 'title':
-                'WARC Effectiveness Awards - Customer Experience',
+                'WARC Awards for Effectiveness - Customer Experience',
                 'url':
                 'awards/effectiveness/customer-experience',
                 'category':
@@ -641,7 +641,7 @@ AWARDS = {
                 'lp':
                 265,
                 'title':
-                'WARC Effectiveness Awards - Collaboration & Culture',
+                'WARC Awards for Effectiveness - Collaboration & Culture',
                 'url':
                 'awards/effectiveness/collaboration-culture',
                 'category':
@@ -719,7 +719,7 @@ AWARDS = {
                 'lp':
                 266,
                 'title':
-                'WARC Effectiveness Awards - Sustained Growth',
+                'WARC Awards for Effectiveness - Sustained Growth',
                 'url':
                 'awards/effectiveness/sustained-growth',
                 'category':
@@ -797,7 +797,7 @@ AWARDS = {
                 'lp':
                 267,
                 'title':
-                'WARC Effectiveness Awards - Instant Impact',
+                'WARC Awards for Effectiveness - Instant Impact',
                 'url':
                 'awards/effectiveness/instant-impact',
                 'category':
@@ -875,7 +875,7 @@ AWARDS = {
                 'lp':
                 268,
                 'title':
-                'WARC Effectiveness Awards - Brand Purpose',
+                'WARC Awards for Effectiveness - Brand Purpose',
                 'url':
                 'awards/effectiveness/brand-purpose',
                 'category':
@@ -953,7 +953,7 @@ AWARDS = {
                 'lp':
                 269,
                 'title':
-                'WARC Effectiveness Awards - Business-to-Business',
+                'WARC Awards for Effectiveness - Business-to-Business',
                 'url':
                 'awards/effectiveness/business-to-business',
                 'category':
