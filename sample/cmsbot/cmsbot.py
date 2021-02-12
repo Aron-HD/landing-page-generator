@@ -57,8 +57,8 @@ class CMSBot:
                 bot.execute_script(f"document.getElementById('source-code-textarea').value = '{con}' ;")
             except JavascriptException as e:
                 log.error(e)
-                raise e
-                # html.send_keys(content)
+                # raise e
+                html.send_keys(content)
             time.sleep(1)
             # input('Happy to save changes? press any key.')
         except NoSuchElementException as e:
