@@ -4,7 +4,8 @@ sample/frontend/
 
 # individual files
 sandbox.py
-dictionary.py
+sample/dictionary.py
+data/dictionary.json
 
 # file types
 *.jpg
@@ -15,3 +16,5 @@ dictionary.py
 *.sublime-project
 *.sublime-workspace
 *.log
+*.db
+*.sqlite
