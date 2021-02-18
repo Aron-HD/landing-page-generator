@@ -24,6 +24,7 @@ except KeyError as e:
 # init as class
 data = {}
 
+
 def get_csv(cat, page):  # swap page for path
     '''Reads in csv data for shortlist, winners or judges.'''
     log.debug('reading csv')
@@ -62,8 +63,9 @@ def get_data(date, page, award, category):
     # category = values['cat']
     # page = values['page']
     data.update({"open": values['open']})
-    data.update({	                               # get each elmt using awd_elmt() from AWARDS dictionary
-        "award":       award,                      # and take input from gui window / cli and feed into temporary
+    data.update({                                  # get each elmt using awd_elmt() from AWARDS dictionary
+        # and take input from gui window / cli and feed into temporary
+        "award":       award,
         "cat":         category,                   # data dictionary for rendering template
         # should shrink this to just get date from now
         "year":        func.process_date(date)[2],
@@ -98,14 +100,14 @@ def get_data(date, page, award, category):
         papers = get_csv(category, page)
 
         if page != 'shortlist':
-            medals = ['grand','gold','silver','bronze']
+            medals = ['grand', 'gold', 'silver', 'bronze']
             # could do this better with filter and ~filter
             winning_ids = ['A'+str(i['ID']) for i in papers if any(
-                    [x in i['Award'].lower() for x in medals]
-                )]
+                [x in i['Award'].lower() for x in medals]
+            )]
             shortlisted_ids = ['A'+str(i['ID']) for i in papers if any(
-                    [x not in i['Award'].lower() for x in medals]
-                )]
+                [x not in i['Award'].lower() for x in medals]
+            )]
             data.update({"winners_ids": winning_ids})
         else:
             winning_ids = None
@@ -124,7 +126,8 @@ def get_data(date, page, award, category):
             "category": AWARDS[award]['categories'][category]['category'],
             "category_href": AWARDS[award]['categories'][category]['category_href']
         })
-        print('\nPanel chair:', data['judges'][0]['Name'], data['judges'][0]['Surname'])
+        print('\nPanel chair:', data['judges'][0]
+              ['Name'], data['judges'][0]['Surname'])
 
     if 'judges_split' in page:
         data.update({"quote": input('Insert quote:\n')})
@@ -132,7 +135,7 @@ def get_data(date, page, award, category):
     if 'entry' in page:
         entry_form = AWARDS[award]['prize'] + data['year'] + '-entryform.docx'
         data.update({"entry_form": entry_form})
-    
+
     if 'entry' in page or 'about' in page:
         deadline = input('Deadline for entries?: ')
         data.update({"deadline": deadline})
@@ -150,13 +153,13 @@ def get_html(date, page, award, category):
     '''Returns a filename, its output content and its page element code.'''
     d = get_data(date, page, award, category)
     yr = d['year']
-    elmt = func.awd_elmt( # page element
+    elmt = func.awd_elmt(  # page element
         page=page,
         award=award,
         category=category
     )
     # bring these functions into class
-    fn = func.save_name(page, award, category, yr, elmt) # filename
+    fn = func.save_name(page, award, category, yr, elmt)  # filename
     try:
         output = env.get_template(f'{page}.html').render(d=d, page=page)
     except TypeError as e:
@@ -172,17 +175,19 @@ def update_page(assets):
     from cmsbot.cmsbot import CMSBot  # import here so only if selected?
     try:
         cms = CMSBot()
-        print("\nupdating pages in cms...\n" )
+        print("\nupdating pages in cms...\n")
+        prompt_save = input("save all changes? 'y' or 'n' - ")
         for name, page_element, content in assets:
             print(name)
             cms.edit_page(page_element)
-            cms.paste_content(content.replace('\t', '   '))#.replace('\n', '\\n'))
-            if input("save changes? 'y' or 'n' - ") == 'y':
+            # .replace('\n', '\\n'))
+            cms.paste_content(content.replace('\t', '   '))
+            if prompt_save == 'y':
                 cms.save_changes()
                 print('saved')
             else:
                 print('did not save')
-                
+
         print('\n# updates complete')
 
     except Exception as e:
@@ -202,7 +207,7 @@ def main():
     written_assets = []
     print("Writing files:\n")
 
-    for page in values['page']: # should update data once instead of every page
+    for page in values['page']:  # should update data once instead of every page
         for category in values['cat']:
             file, output, element = get_html(date, page, award, category)
             fname = Path(file).name
@@ -212,21 +217,22 @@ def main():
                 written_assets.append((fname, element, output))
             else:
                 print(f'# failed --> {fname}')
-    
+
     # write a file containing all output from written_assets
     proof_html_content = '\n'.join([i[2] for i in written_assets])
     write_html('../static/html/proof-html.html', proof_html_content)
     print('\n# wrote proof html file in /static/html')
-    
+
     # prompt user whether to upload content
     string = f"\nupdate CMS articles with file content?\n- select 'y' or 'n': "
     select = input(string).casefold()
-    
+
     # upload to cms using cmsbot class if confirmed
     if select == 'y':
         update_page(written_assets)
     else:
         pass
+
 
 if __name__ == '__main__':
     main()
