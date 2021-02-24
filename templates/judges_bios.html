@@ -12,7 +12,11 @@
     {% for j in d.judges -%}
     {% set jname = j.Name + ' ' + j.Surname -%}
     {% set jimage = jname.lower().replace("'",'-').replace(' ', '-').replace('’','-').replace('ü','u') -%}
-    {% set jtitle = j.Title + ', ' + j.Company -%}
+    {% if j.Company|string|length > 1 and j.Company|string != 'nan' -%}
+    {% set jtitle = j.Title|string + ', ' + j.Company|string -%}
+    {% else -%}
+    {% set jtitle = j.Title -%}
+    {% endif -%}
     {%- if j.Bio|length > 5 %}
     
     <!-- {{ jname }} -->
