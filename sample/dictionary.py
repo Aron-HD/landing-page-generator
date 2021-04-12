@@ -1,13 +1,13 @@
 AWARDS = {
     'asia': {
         'lp': 224,
-        'title': 'WARC Prize for Asian Strategy',
+        'title': 'WARC Awards for Asian Strategy',
         'url': 'awards/warc-prize-for-asian-strategy',
         'award': 'asia',
-        'full_award': 'WARC Prize for Asian Strategy',
+        'full_award': 'WARC Awards for Asian Strategy',
         'code': 'warc-prize-for-asian-strategy',
         'prize': 'asiaprize',
-        'awards_or_prize': 'Prize',
+        'awards_or_prize': 'Awards',
         'cartridge': 5676,
         'hero': 5692,
         'about': 5694,
@@ -22,7 +22,7 @@ AWARDS = {
                 'lp':
                 224,
                 'title':
-                'WARC Prize for Asian Strategy',
+                'WARC Awards for Asian Strategy',
                 'url':
                 'awards/warc-prize-for-asian-strategy',
                 'category':
@@ -54,13 +54,13 @@ AWARDS = {
                 'judges_lp':
                 1,
                 'judges_title':
-                'WARC Prize for Asian Strategy - 2020 Judges',
+                'WARC Awards for Asian Strategy - 2020 Judges',
                 'judges_url':
                 '/asiaprize/2020judges',
                 'spec_award1':
-                'The Category Disruptor Award',
+                'E-Commerce Excellence Award',
                 'spec_bio1':
-                'For the best example of a brand that has successfully broken with category conventions.',
+                'For the best use of e-commerce platforms and features to further amplify brand objectives.',
                 'spec_award2':
                 'The Early Adopter Award',
                 'spec_bio2':
@@ -80,8 +80,8 @@ AWARDS = {
                 'body_copy':
                 '',
                 'special_awards': {
-                    'The Category Disruptor Award':
-                    'For the best example of a brand that has successfully broken with category conventions.',
+                    'E-Commerce Excellence Award':
+                    'For the best use of e-commerce platforms and features to further amplify brand objectives.',
                     'The Early Adopter Award':
                     'For the best example of a brand using a new innovation or emerging tech or platform.',
                     'The Long-Term Strategy Award':
@@ -91,8 +91,8 @@ AWARDS = {
                     'The Research Excellence Award':
                     'For the best use of research in the development of strategic ideas.'
                 },
-                'The Category Disruptor Award':
-                'For the best example of a brand that has successfully broken with category conventions.',
+                'E-Commerce Excellence Award':
+                'For the best use of e-commerce platforms and features to further amplify brand objectives.',
                 'The Early Adopter Award':
                 'For the best example of a brand using a new innovation or emerging tech or platform.',
                 'The Long-Term Strategy Award':
