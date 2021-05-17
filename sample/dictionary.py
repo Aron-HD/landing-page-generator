@@ -106,10 +106,10 @@ AWARDS = {
     },
     'media': {
         'lp': 226,
-        'title': 'WARC Media Awards',
+        'title': 'WARC Awards for Media',
         'url': 'awards/warc-media-awards',
         'award': 'media',
-        'full_award': 'WARC Media Awards',
+        'full_award': 'WARC Awards for Media',
         'code': 'warc-media-awards',
         'prize': 'mediaawards',
         'awards_or_prize': 'Awards',
@@ -127,9 +127,9 @@ AWARDS = {
                 'lp':
                 255,
                 'title':
-                'WARC Media Awards - Effective Channel Integration',
+                'WARC Awards for Media - Effective Channel Integration',
                 'url':
-                '',
+                'awards/warc-media-awards/integration',
                 'category':
                 'channel-integration',
                 'report':
@@ -159,7 +159,7 @@ AWARDS = {
                 'judges_lp':
                 2,
                 'judges_title':
-                'WARC Media Awards - 2020 Channel Integration Judges',
+                'WARC Awards for Media - 2020 Channel Integration Judges',
                 'judges_url':
                 '/mediaawards/channel-integration-judges',
                 'spec_award1':
@@ -205,9 +205,9 @@ AWARDS = {
                 'lp':
                 258,
                 'title':
-                'WARC Media Awards - Best Use of Data',
+                'WARC Awards for Media - Best Use of Data',
                 'url':
-                '',
+                'awards/warc-media-awards/data',
                 'category':
                 'data',
                 'report':
@@ -237,7 +237,7 @@ AWARDS = {
                 'judges_lp':
                 4,
                 'judges_title':
-                'WARC Media Awards - 2020 Use of Data Judges',
+                'WARC Awards for Media - 2020 Use of Data Judges',
                 'judges_url':
                 '/mediaawards/data-judges',
                 'spec_award1':
@@ -283,9 +283,9 @@ AWARDS = {
                 'lp':
                 257,
                 'title':
-                'WARC Media Awards - Effective Use of Partnerships & Sponsorships',
+                'WARC Awards for Media - Effective Use of Partnerships & Sponsorships',
                 'url':
-                '',
+                'awards/warc-media-awards/partnerships-sponsorships',
                 'category':
                 'partnerships-sponsorships',
                 'report':
@@ -315,7 +315,7 @@ AWARDS = {
                 'judges_lp':
                 5,
                 'judges_title':
-                'WARC Media Awards - 2020 Partnerships and Sponsorships Judges',
+                'WARC Awards for Media - 2020 Partnerships and Sponsorships Judges',
                 'judges_url':
                 '/mediaawards/partnerships-sponsorships-judges',
                 'spec_award1':
@@ -361,9 +361,9 @@ AWARDS = {
                 'lp':
                 256,
                 'title':
-                'WARC Media Awards - Effective Use of Tech',
+                'WARC Awards for Media - Effective Use of Tech',
                 'url':
-                '',
+                'awards/warc-media-awards/tech',
                 'category':
                 'tech',
                 'report':
@@ -393,7 +393,7 @@ AWARDS = {
                 'judges_lp':
                 6,
                 'judges_title':
-                'WARC Media Awards - 2020 Use of Tech Judges',
+                'WARC Awards for Media - 2020 Use of Tech Judges',
                 'judges_url':
                 '/mediaawards/tech-judges',
                 'spec_award1':
@@ -512,7 +512,7 @@ AWARDS = {
                 'spec_award5':
                 'The Local Hero Award',
                 'spec_bio5':
-                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. ',
+                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors.',
                 'body_copy':
                 '',
                 'special_awards': {
@@ -525,7 +525,7 @@ AWARDS = {
                     'The Brand Rebel Award':
                     'For the best example of a campaign departing from category norms.',
                     'The Local Hero Award':
-                    'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. '
+                    'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors.'
                 },
                 'The Research Excellence Award':
                 'For the best use of research in the development of strategic ideas.',
@@ -536,7 +536,7 @@ AWARDS = {
                 'The Brand Rebel Award':
                 'For the best example of a campaign departing from category norms.',
                 'The Local Hero Award':
-                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors. '
+                'For the best example of a challenger brand from the MENA region using smart marketing strategy to take on bigger competitors.'
             }
         }
     },
@@ -909,7 +909,7 @@ AWARDS = {
                 'judges_title':
                 'Effectiveness Awards - Brand Purpose Judges',
                 'judges_url':
-                '\teffectivenessawards/brand-purpose-judges',
+                'effectivenessawards/brand-purpose-judges',
                 'spec_award1':
                 'Sustainability Award',
                 'spec_bio1':
