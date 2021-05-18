@@ -43,11 +43,13 @@ def get_csv(cat, page):  # swap page for path
             'previous': f'../data/csv/{cat}_winners.csv',
             'judges': f'../data/csv/{cat}-judges.csv'
         }
-        df = pd.read_csv(path[page])
+        # fill empty rows to stop empty bios being floats
+        df = pd.read_csv(path[page]).fillna('')
         return df.to_dict('records')
+    # catch utf encoding errors and try windows
     except UnicodeError as e:
-        log.warning(e)
-        df = pd.read_csv(path[page], encoding='cp1252')
+        log.debug(e)
+        df = pd.read_csv(path[page], encoding='cp1252').fillna('')
         return df.to_dict('records')
     except KeyError as e:
         log.warning(e)
