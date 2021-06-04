@@ -27,7 +27,6 @@ data = {}
 
 def get_csv(cat, page):  # swap page for path
     '''Reads in csv data for shortlist, winners or judges.'''
-    log.debug('reading csv')
     replacements = [
         'preview-',
         '_bios',
@@ -44,6 +43,7 @@ def get_csv(cat, page):  # swap page for path
             'judges': f'../data/csv/{cat}-judges.csv'
         }
         # fill empty rows to stop empty bios being floats
+        log.debug(f'reading {path[page]}')
         df = pd.read_csv(path[page]).fillna('')
         return df.to_dict('records')
     # catch utf encoding errors and try windows
@@ -146,8 +146,13 @@ def get_data(date, page, award, category):
 
 
 def write_html(filename, output):
-    with open(filename, "w") as f:
-        f.write(output)
+    try:
+        with open(filename, "w", encoding='utf-8') as f:
+            f.write(output)
+    except UnicodeEncodeError as e:
+        log.debug(e)
+        with open(filename, "w", encoding='cp1252') as f:
+            f.write(output)
 
 
 # make this a class LandingPage: that imports from package /template_data with helpers in too
