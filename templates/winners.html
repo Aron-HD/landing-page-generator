@@ -23,33 +23,8 @@
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
-					{% if '+' in i.Award -%}
-					{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
-					
-					<!-- {{ x }} -->
-					<div class="margin-v-medium">
-						<span class="special-details">{{ x }}</span>
-					</div>
-					{% endif %}{% endfor %}
-					{%- endif %}
-					<div class="credits">
-						<div>
-							<span class="credits-category">Brand</span><br>
-							{{ i.Brand }}
-						</div>
-						<div>
-							<span class="credits-category">Agency</span><br>
-							{{ i.Lead }}
-						</div>
-						<div>
-							<span class="credits-category">Advertiser</span><br>
-							{{ i.Parent }}
-						</div>
-						<div>
-							<span class="credits-category">Market</span><br>
-							{{ i.Market }}
-						</div>
-					</div>
+					{% include "credits_special_awards.html" %}
+					{% include "credits_metadata.html" %}
 					<p>{{ d.papers.summary1 if d.papers.summary1 else "PLACEHOLDER" }}</p>
 					<p>{{ d.papers.summary2 if d.papers.summary1 else "PLACEHOLDER" }}</p>
 					<p>{{ d.papers.summary3 if d.papers.summary1 else "PLACEHOLDER" }}</p>
@@ -71,33 +46,8 @@
 				</div>
 				<div class="col-lg-6 order-lg-1">
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
-					{% if '+' in i.Award -%}
-					{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
-					
-					<!-- {{ x }} -->
-					<div class="margin-v-medium">
-						<span class="special-details">{{ x }}</span>
-					</div>
-					{% endif %}{% endfor %}
-					{%- endif %}
-					<div class="credits">
-						<div>
-							<span class="credits-category">Brand</span><br>
-							{{ i.Brand }}
-						</div>
-						<div>
-							<span class="credits-category">Agency</span><br>
-							{{ i.Lead }}
-						</div>
-						<div>
-							<span class="credits-category">Advertiser</span><br>
-							{{ i.Parent }}
-						</div>
-						<div>
-							<span class="credits-category">Market</span><br>
-							{{ i.Market }}
-						</div>
-					</div>
+					{% include "credits_special_awards.html" %}
+					{% include "credits_metadata.html" %}
 					<p>{{ d.papers.summary1 if d.papers.summary1 else "PLACEHOLDER" }}</p>
 				</div>
 			</div>
@@ -115,33 +65,8 @@
 				{% for i in d.papers %}{% if 'SILVER' in i.Award|upper %}
 					<a class="tile tile-light" href="{{ i.Link }}">
 						<h6>{{ i.Title }}</h6>
-						<div class="credits">
-							<div>
-								<span class="credits-category">Brand</span><br>
-								{{ i.Brand }}
-							</div>
-							<div>
-								<span class="credits-category">Agency</span><br>
-								{{ i.Lead }}
-							</div>
-							<div>
-								<span class="credits-category">Advertiser</span><br>
-								{{ i.Parent }}
-							</div>
-							<div>
-								<span class="credits-category">Market</span><br>
-								{{ i.Market }}
-							</div>
-						</div>
-						{% if '+' in i.Award -%}
-						{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
-						
-						<!-- {{ x }} -->
-						<div class="margin-v-medium">
-							<span class="special-details">{{ x }}</span>
-						</div>
-						{%- endif %}{%- endfor %}
-						{%- endif %}
+						{% include "credits_metadata.html" %}
+						{% include "credits_special_awards.html" %}
 					</a>
 				{% endif %}{% endfor %}
 			</section>
@@ -158,41 +83,12 @@
 				{% for i in d.papers %}{% if 'BRONZE' in i.Award|upper %}
 					<a class="tile tile-light" href="{{ i.Link }}">
 						<h6>{{ i.Title }}</h6>
-						<div class="credits">
-							<div>
-								<span class="credits-category">Brand</span><br>
-								{{ i.Brand }}
-							</div>
-							<div>
-								<span class="credits-category">Agency</span><br>
-								{{ i.Lead }}
-							</div>
-							<div>
-								<span class="credits-category">Advertiser</span><br>
-								{{ i.Parent }}
-							</div>
-							<div>
-								<span class="credits-category">Market</span><br>
-								{{ i.Market }}
-							</div>
-						</div>
-						{% if '+' in i.Award -%}
-						{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
-						
-						<!-- {{ x }} -->
-						<div class="margin-v-medium">
-							<span class="special-details">{{ x }}</span>
-						</div>
-						{%- endif %}{%- endfor %}
-						{%- endif %}
+						{% include "credits_metadata.html" %}
+						{% include "credits_special_awards.html" %}
 					</a>
 				{% endif %}{% endfor %}
 			</section>
-<!-- 			<div class="row margin-t-medium">
-				<div class="col-sm-6 col-lg-3 mx-auto containing-box-links text-center">
-					<a class="box-links box-links-wide" href="/Search/Award/{{ d.cartridge }}/A131405,A131386,A131402,A131408,A131465,A131547,A131551,A131557,A131603,A131399,A131429,A131555,A131587">Browse winners</a>
-				</div>
-			</div> -->
+			{% include "cta_browse_winning.html" %}
 		</div>
 	</section>
 	
@@ -206,40 +102,18 @@
 				{% for i in d.papers %}{% if i.Award == '-' %}
 					<a class="tile tile-light" href="{{ i.Link }}">
 						<h6>{{ i.Title }}</h6>
-						<div class="credits">
-							<div>
-								<span class="credits-category">Brand</span><br>
-								{{ i.Brand }}
-							</div>
-							<div>
-								<span class="credits-category">Agency</span><br>
-								{{ i.Lead }}
-							</div>
-							<div>
-								<span class="credits-category">Advertiser</span><br>
-								{{ i.Parent }}
-							</div>
-							<div>
-								<span class="credits-category">Market</span><br>
-								{{ i.Market }}
-							</div>
-						</div>
+						{% include "credits_metadata.html" %}
 					</a>
 					{% endif %}{% endfor %}
 			</section>
 
 			<!-- Box Links -->
-			<div class="row margin-t-medium">
-				<div class="col-sm-6 col-lg-3 mx-auto containing-box-links text-center">
-					<a class="box-links box-links-wide" href="/Search/Award/{{ d.cartridge }}/{{ d.winners_ids|join(',') }}">Browse winners</a>
-				</div>
-			</div>					
-				</div>
-<!-- 				<div class="col-sm-6 col-lg-3 mr-auto containing-box-links text-center">
-					
-					<a class="box-links box-links-wide" href="/Search?Sort=ContentDate%7c1&amp;qr=%22effective+content+strategy%22&amp;DRange=2020-2020&amp;DVals=10794+10787+10786+10785+4294587931&amp;FstEntry=false&amp;RecordsPerPage=25">Browse all entrants</a>
-				</div> -->
-			</div>
+			{% include "cta_browse_shortlisted.html" %}
+			{% include "cta_browse_entrants.html" %}
+
 		</div>
+
+
+
 	</section>
 </div>
