@@ -2,7 +2,6 @@
 <div id="winners">
 	<section class="section-std bg-background1" id="shortlist">
 		<div class="container-fluid">
-			<!-- <h3>{{ page.title().replace('_',' ') }}</h3> -->
 			<h3>Shortlist</h3>
 		</div>
 		<div class="container-fluid margin-t-medium">
@@ -15,10 +14,17 @@
 							<span class="credits-category">Brand</span><br>
 							{{ i.Brand }}
 						</div>
+						{% if d.award != "effectiveness" -%}
 						<div>
 							<span class="credits-category">Agency</span><br>
 							{{ i.Lead }}
 						</div>
+						{% else -%}
+						<div>
+							<span class="credits-category">Entrant</span><br>
+							{{ i.Entrant }}
+						</div>
+						{% endif -%}
 						<div>
 							<span class="credits-category">Advertiser</span><br>
 							{{ i.Parent }}
@@ -33,8 +39,8 @@
 			</section>
 			<div class="row margin-t-medium">
 				<div class="col-sm-6 col-lg-3 mx-auto containing-box-links text-center">
-					<a class="box-links box-links-wide" href="/Search/Award/5758/A134206,A134242,A134258,A134281,A134300,A134302,A134309,A134314,A134317,A134327,A134334,A134355,A134357,A134360,A134361,A134363,A134381,A134388,A134393,A134399,A134406">Browse shortlist</a>
-				</div>
+					<a class="box-links box-links-wide" href="/Search/Award/{{ d.cartridge }}/{{ d.shortlisted_ids|join(',') }}">Browse shortlist</a>
+				</div> 
 			</div>
 		</div>
 	</section>
