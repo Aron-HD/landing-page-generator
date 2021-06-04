@@ -549,7 +549,7 @@ AWARDS = {
         'code': 'effectiveness',
         'prize': 'effectiveness',
         'awards_or_prize': 'Awards',
-        'cartridge': 0,
+        'cartridge': 6881,
         'hero': 6737,
         'about': 6738,
         'previous': 'category',
