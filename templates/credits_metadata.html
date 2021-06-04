@@ -1,0 +1,25 @@
+<div class="credits">
+						<div>
+							<span class="credits-category">Brand</span><br>
+							{{ i.Brand }}
+						</div>
+						{% if d.award != "effectiveness" -%}
+						<div>
+							<span class="credits-category">Agency</span><br>
+							{{ i.Lead }}
+						</div>
+						{% else -%}
+						<div>
+							<span class="credits-category">Entrant</span><br>
+							{{ i.Entrant }}
+						</div>
+						{% endif -%}
+						<div>
+							<span class="credits-category">Advertiser</span><br>
+							{{ i.Parent }}
+						</div>
+						<div>
+							<span class="credits-category">Market</span><br>
+							{{ i.Market }}
+						</div>
+					</div>

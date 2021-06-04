@@ -1,0 +1,9 @@
+{% if '+' in i.Award -%}
+						{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
+						
+						<!-- {{ x }} -->
+						<div class="margin-v-medium">
+							<span class="special-details">{{ x }}</span>
+						</div>
+						{%- endif %}{%- endfor %}
+						{%- endif %}
