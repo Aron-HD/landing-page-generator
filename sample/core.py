@@ -101,7 +101,7 @@ def get_data(date, page, award, category):
     if any(i in page for i in ['winners', 'shortlist', 'previous']):
         papers = get_csv(category, page)
 
-        if page != 'shortlist':
+        if not 'shortlist' in page:
             medals = ['grand', 'gold', 'silver', 'bronze']
             # could do this better with filter and ~filter
             winning_ids = ['A'+str(i['ID']) for i in papers if any(
