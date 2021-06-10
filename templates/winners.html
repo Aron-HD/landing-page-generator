@@ -25,9 +25,9 @@
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
 					{% include "credits_special_awards.html" %}
 					{% include "credits_metadata.html" %}
-					<p>{{ d.papers.summary1 if d.papers.summary1 else "PLACEHOLDER" }}</p>
-					<p>{{ d.papers.summary2 if d.papers.summary1 else "PLACEHOLDER" }}</p>
-					<p>{{ d.papers.summary3 if d.papers.summary1 else "PLACEHOLDER" }}</p>
+					<p>{{ i.summary1 if i.summary1 else "PLACEHOLDER" }}</p>
+					<p>{{ i.summary2 if i.summary1 else "PLACEHOLDER" }}</p>
+					<p>{{ i.summary3 if i.summary1 else "PLACEHOLDER" }}</p>
 				</div>
 			</div>
 			{% endif %}{% endfor %}
@@ -48,7 +48,7 @@
 					<h4><a href="{{ i.Link }}">{{ i.Title }}</a></h4>
 					{% include "credits_special_awards.html" %}
 					{% include "credits_metadata.html" %}
-					<p>{{ d.papers.summary1 if d.papers.summary1 else "PLACEHOLDER" }}</p>
+					<p>{{ i.summary1 if i.summary1 else "PLACEHOLDER" }}</p>
 				</div>
 			</div>
 			{% endif %}{% endfor %}		
@@ -99,18 +99,17 @@
 		</div>
 		<div class="container-fluid margin-t-medium">
 			<section class="tiles-triptych tiles-spaced">
-				{% for i in d.papers %}{% if i.Award == '-' %}
+				{% for i in d.papers %}{% if 'Shortlisted' in i.Award %}
 					<a class="tile tile-light" href="{{ i.Link }}">
 						<h6>{{ i.Title }}</h6>
 						{% include "credits_metadata.html" %}
+						{% include "credits_special_awards.html" %}
 					</a>
 					{% endif %}{% endfor %}
 			</section>
 
 			<!-- Box Links -->
 			{% include "cta_browse_shortlisted.html" %}
-			{% include "cta_browse_entrants.html" %}
-
 		</div>
 
 
