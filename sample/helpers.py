@@ -24,10 +24,9 @@ class Functions:
             category = AWARDS[award]['categories'][category]
             if page in [k for k in category.keys()]:
                 code = category[page]
-                return code
             else:
                 code = AWARDS[award][page]
-                return code
+            return code
         except KeyError:
             log.debug('page not found in awards dictionary keys:', page)
             return 0
