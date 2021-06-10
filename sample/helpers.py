@@ -23,10 +23,8 @@ class Functions:
         try:
             category = AWARDS[award]['categories'][category]
             if page in [k for k in category.keys()]:
-                code = category[page]
-            else:
-                code = AWARDS[award][page]
-            return code
+                return category[page]
+            return AWARDS[award][page]
         except KeyError:
             log.debug('page not found in awards dictionary keys:', page)
             return 0
@@ -87,22 +85,22 @@ class Functions:
 # Links
 
 - **Reports**
-	- "social": "/content/article/2020-social-strategy-report-insights-from-the-warc-awards/133117",
-	- "content": "/content/article/2020-content-strategy-report-insights-from-the-warc-awards/133641"
-	- "mena": "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904",
-	- "asia": "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"
-	- "media": "/content/article/2020-media-strategy-report-insights-from-the-warc-media-awards/132328",
-	- "innovation": ?
-	- "purpose": ?
+    - "social": "/content/article/2020-social-strategy-report-insights-from-the-warc-awards/133117",
+    - "content": "/content/article/2020-content-strategy-report-insights-from-the-warc-awards/133641"
+    - "mena": "/content/article/2020-mena-strategy-report-insights-from-the-warc-prize-for-mena-strategy/133904",
+    - "asia": "/content/article/2020-asian-strategy-report-insights-from-the-warc-prize-for-asian-strategy/134538"
+    - "media": "/content/article/2020-media-strategy-report-insights-from-the-warc-media-awards/132328",
+    - "innovation": ?
+    - "purpose": ?
 - **Entry kits**
-	- warc-awards-entrykit2020.pdf
-	- MENAPrize2020-entrykit_v2.pdf
-	- AsiaPrize-entrykit2020_v03.pdf
-	- mediaawards-entrykit2020.pdf
+    - warc-awards-entrykit2020.pdf
+    - MENAPrize2020-entrykit_v2.pdf
+    - AsiaPrize-entrykit2020_v03.pdf
+    - mediaawards-entrykit2020.pdf
 - **Entry forms**
-	- warc-awards-entryform2020.docx
-	- MENAPrize2020-entryform_v2.docx
-	- AsiaPrize-entryform2020.docx
-	- mediaawards-entryform2020.docx
+    - warc-awards-entryform2020.docx
+    - MENAPrize2020-entryform_v2.docx
+    - AsiaPrize-entryform2020.docx
+    - mediaawards-entryform2020.docx
 
 '''
