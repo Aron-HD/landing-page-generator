@@ -34,7 +34,7 @@ AWARDS = {
                 'full_category':
                 '',
                 'category_href':
-                '/asiaprize/2020judges',
+                'asiaprize/2020judges',
                 'hero':
                 5692,
                 'body':
@@ -56,7 +56,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Awards for Asian Strategy - 2020 Judges',
                 'judges_url':
-                '/asiaprize/2020judges',
+                'asiaprize/2020judges',
                 'spec_award1':
                 'E-Commerce Excellence Award',
                 'spec_bio1':
@@ -139,7 +139,7 @@ AWARDS = {
                 'full_category':
                 'Effective Channel Integration',
                 'category_href':
-                '',
+                'mediaawards/channel-integration-judges',
                 'hero':
                 6673,
                 'body':
@@ -161,7 +161,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Awards for Media - 2020 Channel Integration Judges',
                 'judges_url':
-                '/mediaawards/channel-integration-judges',
+                'mediaawards/channel-integration-judges',
                 'spec_award1':
                 'Path-to-Purchase Award',
                 'spec_bio1':
@@ -217,7 +217,7 @@ AWARDS = {
                 'full_category':
                 'Best Use of Data',
                 'category_href':
-                '',
+                'mediaawards/data-judges',
                 'hero':
                 6685,
                 'body':
@@ -239,7 +239,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Awards for Media - 2020 Use of Data Judges',
                 'judges_url':
-                '/mediaawards/data-judges',
+                'mediaawards/data-judges',
                 'spec_award1':
                 'Personalisation Award',
                 'spec_bio1':
@@ -295,7 +295,7 @@ AWARDS = {
                 'full_category':
                 'Effective Use of Partnerships & Sponsorships',
                 'category_href':
-                '',
+                'mediaawards/partnerships-sponsorships-judges',
                 'hero':
                 6681,
                 'body':
@@ -317,7 +317,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Awards for Media - 2020 Partnerships and Sponsorships Judges',
                 'judges_url':
-                '/mediaawards/partnerships-sponsorships-judges',
+                'mediaawards/partnerships-sponsorships-judges',
                 'spec_award1':
                 'Successful Sponsorship Award',
                 'spec_bio1':
@@ -373,7 +373,7 @@ AWARDS = {
                 'full_category':
                 'Effective Use of Tech',
                 'category_href':
-                '',
+                'mediaawards/tech-judges',
                 'hero':
                 6677,
                 'body':
@@ -395,7 +395,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Awards for Media - 2020 Use of Tech Judges',
                 'judges_url':
-                '/mediaawards/tech-judges',
+                'mediaawards/tech-judges',
                 'spec_award1':
                 'Early Adopter Award',
                 'spec_bio1':
@@ -470,7 +470,7 @@ AWARDS = {
                 'full_category':
                 '',
                 'category_href':
-                '/menaprize/2020judges',
+                'menaprize/2020judges',
                 'hero':
                 5636,
                 'body':
@@ -492,7 +492,7 @@ AWARDS = {
                 'judges_title':
                 'WARC Prize for MENA Strategy - 2020 Judges',
                 'judges_url':
-                '/menaprize/2020judges',
+                'menaprize/2020judges',
                 'spec_award1':
                 'The Research Excellence Award',
                 'spec_bio1':
