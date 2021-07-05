@@ -44,7 +44,7 @@ def get_csv(cat, page):  # swap page for path
         }
         # fill empty rows to stop empty bios being floats
         log.debug(f'reading {path[page]}')
-        df = pd.read_csv(path[page]).fillna('')
+        df = pd.read_csv(path[page], encoding='utf-8').fillna('')
         return df.to_dict('records')
     # catch utf encoding errors and try windows
     except UnicodeError as e:
