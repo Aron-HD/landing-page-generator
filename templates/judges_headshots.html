@@ -6,7 +6,7 @@
 		{%- set jimage = jname.lower().replace("'",'-').replace(' ', '-').replace('’','-').replace('ü','u') %}
 		{%- if j.Bio|length > 5 %}
 			<!-- {{ jname }} -->
-		    <a class="tile" href="https://www.warc.com/{{ d.category_href }}#{{ jimage }}">
+		    <a class="tile" href="https://www.warc.com/{{ d.judges_url }}#{{ jimage }}">
 		        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jimage }}.jpg" alt="{{ jname }}">
 		    </a>
 		{% endif -%}{% endfor -%}{% endif -%}
