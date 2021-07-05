@@ -126,7 +126,9 @@ def get_data(date, page, award, category):
             "judges": get_csv(category, page),
             "url": AWARDS[award]['url'],
             "category": AWARDS[award]['categories'][category]['category'],
-            "category_href": AWARDS[award]['categories'][category]['category_href']
+            "category_url": AWARDS[award]['categories'][category]['url'],
+            "judges_url": AWARDS[award]['categories'][category]['judges_url']
+            # "category_href": AWARDS[award]['categories'][category]['category_href']
         })
         print('\nPanel chair:', data['judges'][0]
               ['Name'], data['judges'][0]['Surname'])
