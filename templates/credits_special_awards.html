@@ -1,5 +1,5 @@
-{% if '+' in i.Award -%}
-						{% for x in d.special_awards|list -%}{% if x|lower in i.Award|lower -%}
+{% if i.SpecialAward -%}
+						{% for x in d.special_awards|list -%}{% if i.SpecialAward|lower in x|lower -%}
 						
 						<!-- {{ x }} -->
 						<div class="margin-v-medium">
