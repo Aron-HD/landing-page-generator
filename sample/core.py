@@ -36,11 +36,14 @@ def get_csv(cat, page):  # swap page for path
     try:
         for item in replacements:
             page = page.replace(item, '')
+
+        base = '../data/csv'
         path = {  # pass in path object in respective functions when class
-            'shortlist': f'../data/csv/shortlists/{cat}_shortlist.csv',
-            'winners': f'../data/csv/{cat}_winners.csv',
-            'previous': f'../data/csv/{cat}_winners.csv',
-            'judges': f'../data/csv/{cat}-judges.csv'
+            'shortlist': f'{base}/shortlists/{cat}_shortlist.csv',
+            'winners': f'{base}/{cat}_winners.csv',
+            'previous': f'{base}/{cat}_winners.csv',
+            'judges': f'{base}/{cat}-judges.csv',
+            'chairs': f'{base}/effectiveness-chairs.csv'
         }
         # fill empty rows to stop empty bios being floats
         log.debug(f'reading {path[page]}')
@@ -121,7 +124,7 @@ def get_data(date, page, award, category):
             "img_content_code": AWARDS[award]['img_content_code']
         })
 
-    if 'judges' in page:
+    if 'judges' in page or 'chairs' in page:
         data.update({
             "judges": get_csv(category, page),
             "url": AWARDS[award]['url'],
