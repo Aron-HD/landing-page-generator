@@ -1,4 +1,4 @@
-AWARDS = {
+{
     'asia': {
         'lp': 224,
         'title': 'WARC Awards for Asian Strategy',
@@ -14,7 +14,7 @@ AWARDS = {
         'previous': 'category',
         'entry_details': 5707,
         'insights': 6692,
-        'img_content_code': 'warc-prize-asia',
+        'img_content_code': 'warc-awards-asia',
         'categories': {
             'asia': {
                 'award':
@@ -569,7 +569,7 @@ AWARDS = {
                 'category':
                 'customer-experience',
                 'report':
-                '?',
+                '565739220',
                 'abbreviation':
                 'exp',
                 'full_category':
@@ -647,7 +647,7 @@ AWARDS = {
                 'category':
                 'collaboration-culture',
                 'report':
-                '?',
+                '565739195',
                 'abbreviation':
                 'cul',
                 'full_category':
@@ -725,7 +725,7 @@ AWARDS = {
                 'category':
                 'sustained-growth',
                 'report':
-                '?',
+                '565739313',
                 'abbreviation':
                 'gro',
                 'full_category':
@@ -803,7 +803,7 @@ AWARDS = {
                 'category':
                 'instant-impact',
                 'report':
-                '?',
+                '565739296',
                 'abbreviation':
                 'imp',
                 'full_category':
@@ -881,7 +881,7 @@ AWARDS = {
                 'category':
                 'brand-purpose',
                 'report':
-                '?',
+                '565739241',
                 'abbreviation':
                 'pur',
                 'full_category':
@@ -959,7 +959,7 @@ AWARDS = {
                 'category':
                 'business-to-business',
                 'report':
-                '?',
+                '565739269',
                 'abbreviation':
                 'bus',
                 'full_category':
