@@ -1,0 +1,51 @@
+<!-- CHAIRS BIOS -->
+<section class="section-title-text">
+  <div class="container-fluid nested">
+    <h1>{{ d.full_award }}: {{ d.year }} Jury Chairs</h1>
+  </div>
+</section>
+
+<section class="container-wide padding-t-biggest">
+  <div class="tiles-people">
+    {% for j in d.judges -%}
+    {% set jname = j.Name + ' ' + j.Surname -%}
+    {% set jimage = jname.lower().replace("'",'-').replace(' ', '-').replace('’','-').replace('ü','u') -%}
+    {% if j.Company|string|length > 1 and j.Company|string != 'nan' -%}
+    {% set jtitle = j.Title|string + ', ' + j.Company|string -%}
+    {% else -%}
+    {% set jtitle = j.Title -%}
+    {% endif -%}
+    {%- if j.Bio|length > 5 %}
+    
+    <!-- {{ jname }} -->
+    <div class="tile" id="{{ jimage }}">
+      <div class="person-main">
+        <div class="person-name">
+          <h4>{{ jname }}</h4>
+        </div>
+        <div class="person-bio">
+          <p>
+            <span class="tag">Jury Chair for [CATEGORY]</span>
+            <br>
+            <span class="tag">{{ jtitle }}</span>
+          </p>
+          <p>
+            {{ j.Bio }}
+          </p>
+        </div>
+      </div>
+      <div class="person-image">
+        <img src="https://cdn.warc.com/Images/WARCSiteContent/landing-pages/awards/{{ d.award }}/judges/{{ jimage }}.jpg" alt="{{ jname }}">
+      </div>
+    </div>
+    {%- endif %}
+    {%- endfor %}
+  
+  </div>
+</section>
+<!-- RETURN LINK -->
+<div class="container-wide text-center margin-t-big margin-b-medium">
+  <p>
+    <a href="{{ d.url }}" class="link-backwards">Back to the {{ d.full_award }} page</a>
+  <p>
+</div>
