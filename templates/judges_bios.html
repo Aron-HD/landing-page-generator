@@ -1,5 +1,9 @@
 <!-- JUDGES BIOS -->
+{%- if 'effectiveness' in d.award %}
+<section class="section-title-text awards-wea">
+{% else %}
 <section class="section-title-text">
+{%- endif %}
   <div class="container-fluid nested">
     <h1>{{ d.full_award }}: {{ d.year }} {{ d.full_category }} Judges</h1>
   </div>
