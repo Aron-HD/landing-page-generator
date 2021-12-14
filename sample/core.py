@@ -92,6 +92,18 @@ def get_data(date, page, award, category):
         "report_image": values['report_image']
     })
 
+    if 'winners' in page:
+        yr = data['year']
+
+        in_dates = (f"{yr}-01-01", f"{yr}-12-31") if not 'media' in data['award'] else (f"{yr}-09-01", f"{int(yr)+1}-12-31")
+
+        full_cat = data['full_award'] if not 'media' in award else 'WARC Media Awards'
+
+        query = func.get_entrants_query(
+            in_dates, data['full_category'], full_cat, data['cartridge'])
+
+        data.update({"entrants_query": query})
+
     # function for (body copy)
     # data.update({"body_copy": placeholder})
     data.update({"body_copy": AWARDS[award]

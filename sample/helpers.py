@@ -3,11 +3,18 @@ import logging as log
 from glob import glob
 from pathlib import Path
 from datetime import datetime as dtm
+from urllib.parse import quote
 
 from dictionary import AWARDS
 
 
 class Functions:
+
+    def get_entrants_query(dates: tuple, fcat: str, fawd: str, cart: int) -> str:
+        dtimes = tuple(dtm.strptime(x, "%Y-%m-%d") for x in dates)
+        dt, df = tuple(i.strftime("%Y%m%d") for i in dtimes)
+        query_string = f"/search/award/{cart}/search?&d={dt},{df}&daterange=custom&q={fcat}&sc={fawd}"
+        return quote(query_string, safe=':/?=&')
 
     def awd_elmt(award, category, page):
         '''To get launch page codes or cartridge code.'''
